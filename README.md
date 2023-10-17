@@ -12,6 +12,14 @@
 
 ```mv you.txt you.sh```
 
+使用 dos2unix 这个工具来进行转换Liunx格式
+
+
+安装```sudo apt-get install dos2unix```
+
+转换```dos2unix /home/ubuntu/you.sh```
+
+
 CD到脚本文件路径，为脚本文件赋予可执行权限```chmod +x you.sh```
 
 
