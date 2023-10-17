@@ -19,6 +19,14 @@ read server_address
 echo "请输入你的串流密钥（例如：?streamname=live_4758957_8940165&key=c836fb1b3b861746125de5bea4&schedule=rtmp&pflag=1）："
 read stream_key
 
+# 提示用户输入他们想要的视频码率
+echo "请输入你希望的视频码率（例如：2000k 或 2M）："
+read video_bitrate
+
+# 提示用户输入他们想要的帧率
+echo "请输入你希望的帧率（例如：30）："
+read frame_rate
+
 # 开始推流
 while true
 do
@@ -26,7 +34,8 @@ do
     do
         if [[ $file == *.mp4 ]] || [[ $file == *.avi ]] || [[ $file == *.mkv ]] || [[ $file == *.flv ]] || [[ $file == *.mov ]]
         then
-            ffmpeg -re -i "$file" -vcodec copy -acodec aac -b:a 192k -f flv "$server_address/$stream_key"
+            # 转码以应用新的码率和帧率
+            ffmpeg -re -i "$file" -vcodec libx264 -acodec aac -b:a 192k -b:v $video_bitrate -r $frame_rate -f flv "$server_address/$stream_key"
             
             exit_code=$?
             if [ $exit_code -ne 0 ]; then
