@@ -63,7 +63,13 @@ do
         if [[ $file == *.mp4 ]] || [[ $file == *.avi ]] || [[ $file == *.mkv ]] || [[ $file == *.flv ]] || [[ $file == *.mov ]]
         then
             ffmpeg -re -i "$file" -vcodec copy -acodec aac -b:a 192k -f flv "$server_address/$stream_key"
-            sleep 2
+            
+            exit_code=$?
+            if [ $exit_code -ne 0 ]; then
+                echo "推流失败，错误码: $exit_code"
+                # 这里可以选择是否要在出错时跳出循环
+                # break
+            fi
         fi
     done
 done
