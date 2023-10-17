@@ -67,10 +67,15 @@ do
             exit_code=$?
             if [ $exit_code -ne 0 ]; then
                 echo "推流失败，错误码: $exit_code"
-                # 这里可以选择是否要在出错时跳出循环
-                # break
+                # 在出错时中断循环
+                break
             fi
         fi
     done
+    
+    if [ $exit_code -ne 0 ]; then
+        echo "由于上述错误，脚本已停止。"
+        exit
+    fi
 done
 ```
