@@ -36,7 +36,7 @@ echo "请输入你的推流服务器地址（例如：rtmp://bdy.live-push.biliv
 read server_address
 
 # 输入串流密钥
-echo "请输入你的串流密钥（例如：?streamname=live_47586957_89400165&key=c836fb100b3b83d61746125de5bea4&schedule=rtmp&pflag=1）："
+echo "请输入你的串流密钥（例如：?streamname=live_4756957_8900165&key=c86fb10b3b83d6176125de5bea4&schedule=rtmp&pflag=1）："
 read stream_key
 
 # 开始推流
