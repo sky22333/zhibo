@@ -16,7 +16,7 @@ echo "请输入你的推流服务器地址（例如：rtmp://bdy.live-push.biliv
 read server_address
 
 # 输入串流密钥
-echo "请输入你的串流密钥（例如：?streamname=live_4758957_80165&key=c836fb100b3b83d616125de5bea4&schedule=rtmp&pflag=1）："
+echo "请输入你的串流密钥（例如：?streamname=live_4758957_8940165&key=c836fb1b3b861746125de5bea4&schedule=rtmp&pflag=1）："
 read stream_key
 
 # 开始推流
@@ -27,7 +27,18 @@ do
         if [[ $file == *.mp4 ]] || [[ $file == *.avi ]] || [[ $file == *.mkv ]] || [[ $file == *.flv ]] || [[ $file == *.mov ]]
         then
             ffmpeg -re -i "$file" -vcodec copy -acodec aac -b:a 192k -f flv "$server_address/$stream_key"
-            sleep 2
+            
+            exit_code=$?
+            if [ $exit_code -ne 0 ]; then
+                echo "推流失败，错误码: $exit_code"
+                # 在出错时中断循环
+                break
+            fi
         fi
     done
+    
+    if [ $exit_code -ne 0 ]; then
+        echo "由于上述错误，脚本已停止。"
+        exit
+    fi
 done
