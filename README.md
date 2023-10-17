@@ -23,8 +23,9 @@
 CD到脚本文件路径，为脚本文件赋予可执行权限```chmod +x you.sh```
 
 
-开启后台运行```bash you.sh &```
-开启后台运行```nohup you.sh &```
+开启后台运行```bash you.sh &``` 
+
+开启后台运行```nohup you.sh &``` 
 
 
 # 脚本格式如下，需.sh的格式
