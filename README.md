@@ -43,7 +43,7 @@ CD到脚本文件路径，为脚本文件赋予可执行权限```chmod +x tao.sh
 
 
 
-```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
+```curl -SsL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
 
 
 然后新开一个窗口
