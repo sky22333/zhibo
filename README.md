@@ -37,7 +37,22 @@ CD到脚本文件路径，为脚本文件赋予可执行权限```chmod +x you.sh
 #
 
 
-或者curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh
+# 或者 
+
+```screen -S myabc ```
+
+
+
+```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
+
+
+然后新开一个窗口
+
+```screen -ls ``` 
+
+
+```screen -d 1728.myabc```     #其中进程ID照你自己的填
+
 
 
 # 脚本格式如下，需.sh的格式
