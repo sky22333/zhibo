@@ -44,7 +44,10 @@ CD到```/home/ubuntu```文件夹创建一个```so```的文件并放入需要推�
 
 一键脚本```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/aaatao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
 
+#
 
+
+###  或者
 CD到```/home/ubuntu```文件夹创建一个```so```的文件并放入需要推流的视频
 
 安装FFmpeg
