@@ -148,6 +148,13 @@ done
 
 ```sudo apt install ffmpeg -y```
 
+
+然后创建新的会话
+
+
+``` screen -S myabc ```
+
+
  推流脚本
 
  
