@@ -20,15 +20,15 @@ then
 fi
 
 # 输入推流服务器地址
-echo "请输入你的推流服务器地址（例如：rtmp://bdy.live-push.bilivideo.com/live-bvc）："
+echo "请输入你的推流服务器地址："
 read server_address
 
 # 输入串流密钥
-echo "请输入你的串流密钥（例如：?streamname=live_4758957_8940165&key=c836fb1b3b861746125de5bea4&schedule=rtmp&pflag=1）："
+echo "请输入你的串流密钥："
 read stream_key
 
 # 提示用户输入他们想要的视频码率
-echo "请输入你希望的视频码率（例如：2000k 或 2M）："
+echo "请输入你希望的视频码率（例如：2000k）："
 read video_bitrate
 
 # 提示用户输入他们想要的帧率
