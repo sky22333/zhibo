@@ -27,9 +27,17 @@ stream_start() {
     # 定义视频存放目录
     read -p "输入你的视频存放目录 (格式仅支持mp4，并且要绝对路径，例如/opt/video): " folder
 
-    echo -e "${yellow}程序将开始推流。${font}"
-    # 使用 find 命令查找指定目录下的所有 .mp4 文件，并逐个推流
-    find "$folder" -type f -name "*.mp4" -exec ffmpeg -re -i {} -c:v libx264 -preset veryfast -tune zerolatency -b:v 1200k -r 30 -c:a aac -b:a 92k -strict -2 -f flv "$rtmp" \;
+    echo -e "${yellow}程序将开始推流。按 Ctrl+C 停止推流。${font}"
+    while true; do
+        # 使用 find 命令查找指定目录下的所有 .mp4 文件，并逐个推流
+        find "$folder" -type f -name "*.mp4" -exec ffmpeg -re -i {} -c:v libx264 -preset veryfast -tune zerolatency -b:v 1200k -r 30 -c:a aac -b:a 92k -strict -2 -f flv "$rtmp" \;
+    done
+}
+
+stream_stop() {
+    # 停止推流
+    echo -e "${yellow}停止推流。${font}"
+    pkill ffmpeg
 }
 
 # 开始菜单设置
