@@ -162,3 +162,12 @@ done
 
 
 请将 ```/home/ubuntu/so``` 替换为你实际的文件夹路径```rtmp://server/live/stream``` 替换为你的实际推流地址和串流密钥。
+
+
+
+然后新开一个窗口输入以下命令保持后台运行
+
+```screen -ls ``` 
+
+
+```screen -d 1728.myabc```     #其中进程ID照你自己的填
