@@ -36,12 +36,6 @@ do
         then
             # 转码以应用新的码率和帧率
             ffmpeg -re -i "$file" -vcodec libx264 -acodec aac -b:a 128k -b:v $video_bitrate -r $frame_rate -f flv "$server_address/$stream_key"
-            
-            # 检查退出码
-            if [ $? -ne 0 ]; then
-                echo "推流出现错误，中断循环。"
-                break 2
-            fi
         fi
     done
     
