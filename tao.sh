@@ -36,14 +36,17 @@ echo "请输入你希望的帧率（例如：30）："
 read frame_rate
 
 # 开始推流
+echo "开始推流..."
 while true
 do
     for file in "$folder_path"/*
     do
         if [ $file == *.mp4 ]
         then
+            echo "开始转码文件：$file"
             # 转码以应用新的码率和帧率
             ffmpeg -re -i "$file" -vcodec libx264 -acodec aac -b:a 128k -b:v $video_bitrate -r $frame_rate -f flv "$server_address/$stream_key"
+            echo "转码完成：$file"
         fi
     done
     
