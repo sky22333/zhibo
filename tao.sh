@@ -8,8 +8,16 @@ then
     sudo apt install ffmpeg
 fi
 
-# 设置视频文件夹路径
-folder_path="/home/ubuntu/so"
+# 提示用户输入视频文件路径
+echo "请输入视频文件夹的完整路径（例如：/home/ubuntu/so）："
+read folder_path
+
+# 检查输入的路径是否存在
+if [ ! -d "$folder_path" ]
+then
+    echo "输入的路径不存在，请重新输入。"
+    exit 1
+fi
 
 # 输入推流服务器地址
 echo "请输入你的推流服务器地址（例如：rtmp://bdy.live-push.bilivideo.com/live-bvc）："
