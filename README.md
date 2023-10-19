@@ -3,18 +3,48 @@
 
 # 利用GPT写的B站无人直播推流脚本，适用于乌班图系统，和其他直播平台，本人liunx小白，欢迎指导建议
 
+#
 
-请将需要推流的视频上传到你服务器的```/home/ubuntu/so```文件下，如果没有请创建一个这样的文件
+
+#
 
 
-CD到文件路径，然后创建脚本文件，然后转换为可执行脚本文件
-例如你的文件名为``` tao ``` 就如下
+#
+
+
+# 一键脚本
+
+创建文件夹并放入需要推流的视频```/home/ubuntu/so```
+
+
+```screen -S myabc ```
+
+
+
+```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
+
+
+然后新开一个窗口
+
+```screen -ls ``` 
+
+
+```screen -d 1728.myabc```     #其中进程ID照你自己的填
+
+
+
+# 或者自己编译脚本文件
+
+创建文件夹并放入需要推流的视频```/home/ubuntu/so```
+
+
+CD到文件路径```/home/ubuntu```然后创建脚本文件
 
 
 ``` touch tao.sh ```
 
 
-CD到脚本文件路径，为脚本文件赋予可执行权限```chmod +x tao.sh```
+为脚本文件赋予可执行权限```chmod +x tao.sh```
 
 
 创建新的会话
@@ -32,27 +62,8 @@ CD到脚本文件路径，为脚本文件赋予可执行权限```chmod +x tao.sh
 
 #
 
-#
 
 #
-
-
-# 或者无需编写文件 
-
-```screen -S myabc ```
-
-
-
-```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
-
-
-然后新开一个窗口
-
-```screen -ls ``` 
-
-
-```screen -d 1728.myabc```     #其中进程ID照你自己的填
-
 
 
 # 脚本格式如下
