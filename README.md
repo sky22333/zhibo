@@ -23,8 +23,8 @@
 
 ```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
 
-
-然后新开一个窗口
+推流成功
+然后新开一个窗口保持后台运行
 
 ```screen -ls ``` 
 
