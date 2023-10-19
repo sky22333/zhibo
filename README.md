@@ -133,3 +133,25 @@ do
     fi
 done
 ```
+
+#
+
+#
+
+###  低性能便宜服务器这个使用这个方案
+
+安装FFmpeg
+
+ 
+```sudo apt update```
+
+
+```sudo apt install ffmpeg -y```
+
+ 推流脚本
+
+ 
+```ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /path/to/folder -name "*.mp4" -exec echo "file '{}'" \;) -c:v libx264 -preset veryfast -tune zerolatency -profile:v baseline -b:v 800k -maxrate 800k -bufsize 800k -c:a aac -b:a 128k -ar 44100 -f flv rtmp://server/live/stream```
+
+
+请将 ```/path/to/folder``` 替换为你实际的文件夹路径```rtmp://server/live/stream``` 替换为你的实际推流地址和串流密钥。
