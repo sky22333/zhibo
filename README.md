@@ -53,7 +53,10 @@ CD到```/home/ubuntu```文件创建脚本文件
 为脚本文件赋予可执行权限```chmod +x tao.sh```
 
 
-创建新的会话
+上传脚本代码后输入```dos2unix tao.sh```将文本类型转换为liunx脚本类型
+
+
+然后创建新的会话
 
 
 ``` screen -S myabc ```
