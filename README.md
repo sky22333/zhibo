@@ -14,7 +14,7 @@
 
 ### 一键脚本（需root身份）
 
-创建文件夹并放入需要推流的视频```/home/ubuntu/so```
+CD到```/home/ubuntu```文件夹创建一个```so```的文件并放入需要推流的视频
 
 
 ```screen -S myabc ```
