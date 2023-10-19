@@ -116,7 +116,7 @@ do
         if [[ $file == *.mp4 ]] || [[ $file == *.avi ]] || [[ $file == *.mkv ]] || [[ $file == *.flv ]] || [[ $file == *.mov ]]
         then
             # 转码以应用新的码率和帧率
-            ffmpeg -re -i "$file" -vcodec libx264 -acodec aac -b:a 192k -b:v $video_bitrate -r $frame_rate -f flv "$server_address/$stream_key"
+            ffmpeg -re -i "$file" -vcodec libx264 -acodec aac -b:a 128k -b:v $video_bitrate -r $frame_rate -f flv "$server_address/$stream_key"
             
             exit_code=$?
             if [ $exit_code -ne 0 ]; then
