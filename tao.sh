@@ -9,7 +9,7 @@ then
 fi
 
 # 提示用户输入视频文件路径
-echo "请输入视频文件夹的完整路径（例如：/home/ubuntu/so）："
+echo "请输入视频文件夹的完整路径（例如：/home/video）："
 read folder_path
 
 # 检查输入的路径是否存在
