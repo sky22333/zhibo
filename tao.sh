@@ -32,22 +32,19 @@ while true
 do
     for file in "$folder_path"/*
     do
-        if [[ $file == *.mp4 ]] || [[ $file == *.avi ]] || [[ $file == *.mkv ]] || [[ $file == *.flv ]] || [[ $file == *.mov ]]
+        if [ $file == *.mp4 ]
         then
             # 转码以应用新的码率和帧率
-            ffmpeg -re -i "$file" -vcodec libx264 -acodec aac -b:a 192k -b:v $video_bitrate -r $frame_rate -f flv "$server_address/$stream_key"
+            ffmpeg -re -i "$file" -vcodec libx264 -acodec aac -b:a 128k -b:v $video_bitrate -r $frame_rate -f flv "$server_address/$stream_key"
             
-            exit_code=$?
-            if [ $exit_code -ne 0 ]; then
-                echo "推流失败，错误码: $exit_code"
-                # 在出错时中断循环
-                break
+            # 检查退出码
+            if [ $? -ne 0 ]; then
+                echo "推流出现错误，中断循环。"
+                break 2
             fi
         fi
     done
     
-    if [ $exit_code -ne 0 ]; then
-        echo "由于上述错误，脚本已停止。"
-        exit
-    fi
+    # 添加延迟，避免过快无限循环
+    sleep 1
 done
