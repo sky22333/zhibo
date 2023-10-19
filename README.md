@@ -37,7 +37,7 @@
 
 CD到```/home/ubuntu```文件夹创建一个```so```的文件并放入需要推流的视频
 
-CD到文件路径```/home/ubuntu```然后创建脚本文件
+CD到```/home/ubuntu```文件创建脚本文件
 
 
 ``` touch tao.sh ```
