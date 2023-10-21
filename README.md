@@ -21,7 +21,7 @@
 
 
 
-```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
+```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
 
 推流成功
 
@@ -44,7 +44,7 @@
 
 一键脚本CentOS 7
 
-```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/B-/main/aaatao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
+```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/aaatao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
 
 #
 
