@@ -2,7 +2,7 @@
 
 ffmpeg_install() {
     # 安装FFMPEG
-    read -p "你的机器内是否已经安装过FFmpeg 4.x? (yes/no): " choose
+    read -p "是否安装FFmpeg? 安装完成后需重新运行该脚本 (yes/no): " choose
     if [ "$choose" = "yes" ]; then
         yum -y install ffmpeg
     elif [ "$choose" = "no" ]; then
@@ -20,12 +20,12 @@ stream_start() {
         echo -e "${green}推流地址输入正确，程序将进行下一步操作。${font}"
         sleep 2
     else
-        echo -e "${red}你输入的地址不合法，请重新运行程序并输入！${font}"
+        echo -e "${red}你输入的地址不合法，请重新运行脚本并输入！${font}"
         exit 1
     fi
 
     # 定义视频存放目录
-    read -p "输入你的视频存放目录 (格式仅支持mp4，并且要绝对路径，例如/opt/video): " folder
+    read -p "输入你的视频存放目录 (格式仅支持mp4，并且要绝对路径，例如/root/video): " folder
 
     echo -e "${yellow}程序将开始推流。按 Ctrl+C 停止推流。${font}"
     while true; do
