@@ -73,10 +73,12 @@ CD到```/home/ubuntu```文件夹创建一个```so```的文件并放入需要推�
  推流脚本
 
  
-```ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/ubuntu/so -name "*.mp4" -exec echo "file '{}'" \;) -c:v libx264 -preset veryfast -tune zerolatency -profile:v baseline -b:v 800k -maxrate 800k -bufsize 800k -c:a aac -b:a 128k -ar 44100 -f flv -r 30 rtmp://server/live/stream```
+```ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -exec echo "file '{}'" \;) -c:v libx264 -preset veryfast -tune zerolatency -profile:v baseline -b:v 800k -maxrate 800k -bufsize 800k -c:a aac -b:a 128k -ar 44100 -f flv -r 30 rtmp://server/live/stream```
 
 
-请将 ```/home/ubuntu/so``` 替换为你实际的文件夹路径```rtmp://server/live/stream``` 替换为你的实际推流地址和串流密钥。
+请将 ```/home/vo``` 替换为你实际的文件夹路径
+
+请将```rtmp://server/live/stream``` 替换为你的实际推流地址和串流密钥。
 
 
 
