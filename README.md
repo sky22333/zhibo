@@ -43,10 +43,9 @@
 
 #
 
-###  低性能便宜服务器使用这个方案
+###  CentOS 7 一键脚本
 
 
-一键脚本CentOS 7
 
 ```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/aaatao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
 
