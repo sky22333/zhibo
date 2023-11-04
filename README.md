@@ -17,7 +17,7 @@
 请创建文件夹并放入需要推流的mp4视频
 
 
-```screen -S myabc```     #新开会话
+```screen -S myabc```     #创建一个窗口会话
 
 
 
@@ -29,13 +29,13 @@
 
 然后新开一个窗口输入以下命令保持后台运行
 
-```screen -ls```       #查看会话
+```screen -ls```       #查看窗口会话
 
 
 ```screen -d 1728.myabc```     #其中进程ID照你自己的填
 
 
-如果需要停止 ```screen -X -S 1728.myabc quit```       #停止该会话
+如果需要停止 ```screen -X -S 1728.myabc quit```       #关闭该窗口会话
 
 
 #
