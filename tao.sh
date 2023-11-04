@@ -4,7 +4,6 @@ ffmpeg_install() {
     # 安装FFMPEG
     read -p "你的机器内是否已经安装过FFmpeg 4.x? (yes/no): " choose
     if [ "$choose" = "yes" ]; then
-        sudo apt-get update
         sudo apt-get install ffmpeg
     elif [ "$choose" = "no" ]; then
         echo -e "${yellow}你选择不安装FFmpeg，请确定你的机器内已经自行安装过FFmpeg，否则程序无法正常工作！${font}"
