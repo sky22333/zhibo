@@ -53,7 +53,7 @@
 
 
 ###  或者手动推流
-CD到```/home/ubuntu```文件夹创建一个```so```的文件并放入需要推流的视频
+CD到```/home```文件夹创建一个```vo```的文件并放入需要推流的视频
 
 安装FFmpeg
 
@@ -64,7 +64,7 @@ CD到```/home/ubuntu```文件夹创建一个```so```的文件并放入需要推�
 ```sudo apt install ffmpeg -y```
 
 
-然后创建新的会话
+然后创建新的会话窗口
 
 
 ``` screen -S myabc```
@@ -82,11 +82,11 @@ CD到```/home/ubuntu```文件夹创建一个```so```的文件并放入需要推�
 
 
 
-然后新开一个窗口输入以下命令保持后台运行
+然后新开一个终端窗口输入以下命令保持后台运行
 
-```screen -ls``` 
+```screen -ls```       #查看会话
 
 
 ```screen -d 1728.myabc```     #其中进程ID照你自己的填
 
-```screen -X -S 1728.myabc quit```       #停止该会话
+```screen -X -S 1728.myabc quit```       #关闭该会话窗口
