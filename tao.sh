@@ -2,7 +2,7 @@
 
 ffmpeg_install() {
     # 安装FFMPEG
-    read -p "你的机器内是否已经安装过FFmpeg 4.x? (yes/no): " choose
+    read -p "是否安装FFmpeg? 安装完成后需重新运行该脚本 (yes/no): " choose
     if [ "$choose" = "yes" ]; then
         sudo apt-get install ffmpeg
     elif [ "$choose" = "no" ]; then
