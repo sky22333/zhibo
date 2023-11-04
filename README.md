@@ -34,6 +34,10 @@
 
 ```screen -d 1728.myabc```     #其中进程ID照你自己的填
 
+
+如果需要停止 ```screen -X -S 1728.myabc quit```       #停止该会话
+
+
 #
 
 
