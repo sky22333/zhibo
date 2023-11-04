@@ -70,7 +70,7 @@ CD到```/home```文件夹创建一个```vo```的文件并放入需要推流的�
 ``` screen -S myabc```
 
 
- 推流脚本
+ 推流命令
 
  
 ```ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -exec echo "file '{}'" \;) -c:v libx264 -preset veryfast -tune zerolatency -profile:v baseline -b:v 800k -maxrate 800k -bufsize 800k -c:a aac -b:a 128k -ar 44100 -f flv -r 30 rtmp://server/live/stream```
