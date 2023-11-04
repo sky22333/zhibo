@@ -89,4 +89,4 @@ CD到```/home```文件夹创建一个```vo```的文件并放入需要推流的�
 
 ```screen -d 1728.myabc```     #其中进程ID照你自己的填
 
-```screen -X -S 1728.myabc quit```       #关闭该会话窗口
+如果需要停止```screen -X -S 1728.myabc quit```       #关闭该会话窗口
