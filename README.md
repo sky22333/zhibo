@@ -21,7 +21,7 @@
 
 
 
-```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/tao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
+```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/tao.sh && chmod 755 /root/tao.sh && /root/tao.sh```
 
 推流成功
 
@@ -47,7 +47,7 @@
 
 
 
-```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/aaatao.sh && chmod 700 /root/tao.sh && /root/tao.sh```
+```curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/aaatao.sh && chmod 755 /root/tao.sh && /root/tao.sh```
 
 #
 
