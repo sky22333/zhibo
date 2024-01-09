@@ -16,14 +16,14 @@
 
 #### 请创建文件夹并放入需要推流的mp4视频
 
-创建一个新的会话窗口
+创建一个新的会话窗口:
 
 ```
 screen -S myabc
 ```
 
 
-开始推流
+开始推流:
 
 ```
 curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/tao.sh && chmod 755 /root/tao.sh && /root/tao.sh
