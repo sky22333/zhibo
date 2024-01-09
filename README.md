@@ -72,7 +72,7 @@ curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main
 #
 
 
-###  或者手动推流
+##  手动推流教程：
 CD到```/home```文件夹创建一个```vo```的文件并放入需要推流的视频
 
 安装FFmpeg：
