@@ -6,7 +6,7 @@
 #
 
 
-[docker部署方式](https://github.com/taotao1058/Docker-Hub/blob/main/docker%20ffmpeg)
+[docker部署方式](https://github.com/taotao1058/Docker-Hub/blob/main/docker%20ffmpeg.md)
 
 
 #
