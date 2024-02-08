@@ -75,7 +75,7 @@ curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main
 ##  手动推流教程：
 CD到```/home```文件夹创建一个```vo```的文件并放入需要推流的视频
 
-安装FFmpeg：
+#### 安装FFmpeg：
 
  
 ```
@@ -88,19 +88,13 @@ sudo apt install ffmpeg -y
 ```
 
 
-然后创建新的会话窗口:
 
-
-```
-screen -S myabc
-```
-
-
- 推流命令:
+#### 后台运行推流命令:
 
  
 ```
-ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -exec echo "file '{}'" \;) -c:v libx264 -preset veryfast -tune zerolatency -profile:v baseline -b:v 800k -maxrate 800k -bufsize 800k -c:a aac -b:a 128k -ar 44100 -f flv -r 30 rtmp://server/live/stream
+nohup ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -exec echo "file '{}'" \;) -c:v copy -c:a aac -b:a 128k -ar 44100 -f flv -r 30 rtmp://server/live/stream &
+disown
 ```
 
 
@@ -108,28 +102,15 @@ ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -e
 
 请将```rtmp://server/live/stream``` 替换为你的实际推流地址和串流密钥。
 
-
-
-然后新开一个终端窗口输入以下命令保持后台运行
-
-查看会话:
+#### 强制停止推流
 
 ```
-screen -ls
-```       
-
-其中进程ID照你自己的填:
-
+pkill -f "ffmpeg"
 ```
-screen -d 1728.myabc
-```     
 
-如果需要停止:
 
-```
-screen -X -S 1728.myabc quit
-```
-关闭该会话窗口
+
+
 
 
 ## 拉流直播源然后推流到指定rtmp地址
