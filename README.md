@@ -93,14 +93,14 @@ sudo apt install ffmpeg -y
 
  
 ```
-nohup ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -exec echo "file '{}'" \;) -c:v copy -c:a aac -b:a 128k -ar 44100 -f flv -r 30 rtmp://server/live/stream &
+nohup ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -exec echo "file '{}'" \;) -c copy -f flv -r 30 "rtmp://server/live/stream" > ffmpeg_output.log 2>&1 &
 disown
 ```
 
 
-请将 ```/home/vo``` 替换为你实际的视频文件夹路径
+ ```/home/vo``` 为你的视频文件夹路径
 
-请将```rtmp://server/live/stream``` 替换为你的实际推流地址和串流密钥。
+将```rtmp://server/live/stream``` 替换为你的实际推流地址和串流密钥。
 
 #### 强制停止推流
 
