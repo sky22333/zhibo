@@ -138,11 +138,6 @@ screen -X -S 1728.myabc quit
 ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v libx264 -preset ultrafast -tune zerolatency -c:a aac -strict experimental -f flv rtmp://your_rtmp_server/live/stream_key
 ```
 
-##### 低配置服务器
-
-```
-ffmpeg -thread_queue_size 16 -i "直播源URL" -s 1280x720 -b:v 1500k -r 30 -c:v libx264 -preset medium -tune zerolatency -c:a aac -strict experimental -f flv rtmp://your_rtmp_server/live/stream_key
-```
 
 
 
