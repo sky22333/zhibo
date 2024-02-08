@@ -93,8 +93,7 @@ sudo apt install ffmpeg -y
 
  
 ```
-nohup ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -exec echo "file '{}'" \;) -c copy -f flv -r 30 "rtmp://server/live/stream" > ffmpeg_output.log 2>&1 &
-disown
+nohup ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -exec echo "file '{}'" \;) -c copy -f flv -r 30 'rtmp://server/live/stream' > ffmpeg_output.log 2>&1 & disown
 ```
 
 
