@@ -150,6 +150,12 @@ disown
 替换 `rtmp://your_rtmp_server/live/stream_key`
 
 
+#### 强制停止推流
+
+```
+pkill -f "ffmpeg"
+```
+
 
 
 ##  带宽码率推荐:
