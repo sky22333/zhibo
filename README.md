@@ -134,8 +134,17 @@ screen -X -S 1728.myabc quit
 
 ## 拉流直播源然后推流到指定rtmp地址
 
+####  前台运行
+
 ```
 ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v libx264 -preset ultrafast -tune zerolatency -c:a aac -strict experimental -f flv rtmp://your_rtmp_server/live/stream_key
+```
+
+#### 后台运行
+
+```
+nohup ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v libx264 -preset ultrafast -tune zerolatency -c:a aac -strict experimental -f flv rtmp://your_rtmp_server/live/stream_key > ffmpeg_output.log 2>&1 &
+disown
 ```
 
 替换 `rtmp://your_rtmp_server/live/stream_key`
