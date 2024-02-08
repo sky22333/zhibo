@@ -141,7 +141,7 @@ ffmpeg -i "直播源URL" -c:v libx264 -preset ultrafast -tune zerolatency -c:a a
 ##### 低配置服务器
 
 ```
-ffmpeg -i "直播源URL" -s 640x360 -b:v 800k -r 24 -c:v libx265 -preset ultrafast -tune zerolatency -c:a aac -strict experimental -f flv rtmp://your_rtmp_server/live/stream_key
+ffmpeg -i "直播源URL" -s 1280x720 -b:v 1500k -r 30 -c:v libx265 -preset medium -tune zerolatency -c:a aac -strict experimental -f flv rtmp://your_rtmp_server/live/stream_key
 ```
 
 
