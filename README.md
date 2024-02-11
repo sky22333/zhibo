@@ -99,7 +99,6 @@ nohup ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v libx264 -preset ultraf
 disown
 ```
 
-替换 `rtmp://your_rtmp_server/live/stream_key`
 
 
 #### 强制停止推流
