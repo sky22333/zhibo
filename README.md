@@ -70,7 +70,10 @@ curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main
 
 
 
-### 安装FFmpeg：
+## 拉流直播源然后推流到指定rtmp地址
+
+
+#### 安装FFmpeg：
 
  
 ```
@@ -82,9 +85,6 @@ sudo apt update
 sudo apt install ffmpeg -y
 ```
 
-
-
-## 拉流直播源然后推流到指定rtmp地址
 
 ####  前台运行
 
