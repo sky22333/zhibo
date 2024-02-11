@@ -3,13 +3,11 @@
 
 ### 利用GPT写的无人直播FFmpeg推流脚本
 
-#
 
 
-[docker部署方式](https://github.com/taotao1058/Docker-Hub/blob/main/docker%20ffmpeg.md)
 
+### [建议使用docker部署方式](https://github.com/taotao1058/Docker-Hub/blob/main/docker%20ffmpeg.md)
 
-#
 
 
 ### 一键脚本（ubuntu系统）
@@ -69,13 +67,10 @@ screen -X -S 1728.myabc quit
 curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/aaatao.sh && chmod 755 /root/tao.sh && /root/tao.sh
 ```
 
-#
 
 
-##  手动推流教程：
-CD到```/home```文件夹创建一个```vo```的文件并放入需要推流的视频
 
-#### 安装FFmpeg：
+### 安装FFmpeg：
 
  
 ```
@@ -86,29 +81,6 @@ sudo apt update
 ```
 sudo apt install ffmpeg -y
 ```
-
-
-
-#### 后台运行推流命令:
-
- 
-```
-nohup ffmpeg -re -stream_loop -1 -f concat -safe 0 -i <(find /home/vo -name "*.mp4" -exec echo "file '{}'" \;) -c copy -f flv -r 30 'rtmp://server/live/stream' > ffmpeg_output.log 2>&1 & disown
-```
-
-
- ```/home/vo``` 为你的视频文件夹路径
-
-将```rtmp://server/live/stream``` 替换为你的实际推流地址和串流密钥。
-
-#### 强制停止推流
-
-```
-pkill -f "ffmpeg"
-```
-
-
-
 
 
 
