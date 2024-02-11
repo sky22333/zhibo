@@ -89,13 +89,13 @@ sudo apt install ffmpeg -y
 ####  前台运行
 
 ```
-ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v libx264 -preset ultrafast -tune zerolatency -c:a aac -strict experimental -f flv rtmp://your_rtmp_server/live/stream_key
+ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v libx264 -preset ultrafast -tune zerolatency -c:a aac -strict experimental -f flv "推流地址"
 ```
 
 #### 后台运行
 
 ```
-nohup ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v libx264 -preset ultrafast -tune zerolatency -c:a aac -strict experimental -f flv rtmp://your_rtmp_server/live/stream_key > ffmpeg_output.log 2>&1 &
+nohup ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v libx264 -preset ultrafast -tune zerolatency -c:a aac -strict experimental -f flv "推流地址" > ffmpeg_output.log 2>&1 &
 disown
 ```
 
