@@ -6,7 +6,7 @@
 
 
 
-### [建议使用docker部署方式](https://github.com/taotao1058/Docker-Hub/blob/main/docker%20ffmpeg.md)
+### [建议使用docker部署方式](https://github.com/sky22333/Docker-Hub/blob/main/docker%20ffmpeg.md)
 
 
 
@@ -24,7 +24,7 @@ screen -S myabc
 开始推流:
 
 ```
-curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/tao.sh && chmod 755 /root/tao.sh && /root/tao.sh
+curl -sL -o /root/tao.sh https://raw.githubusercontent.com/sky22333/zhibo/main/tao.sh && chmod 755 /root/tao.sh && /root/tao.sh
 ```
 
 推流成功。
@@ -64,7 +64,7 @@ screen -X -S 1728.myabc quit
 
 
 ```
-curl -sL -o /root/tao.sh https://raw.githubusercontent.com/taotao1058/zhibo/main/aaatao.sh && chmod 755 /root/tao.sh && /root/tao.sh
+curl -sL -o /root/tao.sh https://raw.githubusercontent.com/sky22333/zhibo/main/aaatao.sh && chmod 755 /root/tao.sh && /root/tao.sh
 ```
 
 
