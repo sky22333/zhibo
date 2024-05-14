@@ -6,7 +6,7 @@
 
 
 
-### [建议使用docker部署方式](https://github.com/sky22333/Docker-Hub/blob/main/docker%20ffmpeg.md)
+### [建议使用docker部署方式](https://github.com/sky22333/Docker-Hub/blob/main/docker/docker%20ffmpeg.md)
 
 
 
