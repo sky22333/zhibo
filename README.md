@@ -3,12 +3,12 @@
 
 
 
-### [Docker部署](https://github.com/sky22333/Docker-Hub/blob/main/docker/docker%20ffmpeg.md)
+ [Docker部署](https://github.com/sky22333/Docker-Hub/blob/main/docker/docker%20ffmpeg.md) 只能推流单个视频
 
 
 
 ### 一键脚本
-适用于ubuntu/debian系统
+适用于ubuntu/debian系统，可遍历推流多个视频
 
 #### 先创建文件夹并放入需要推流的mp4视频
 运行脚本
