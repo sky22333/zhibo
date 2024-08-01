@@ -21,7 +21,7 @@ screen -S myabc
 开始推流:
 
 ```
-bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
+bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffm.sh)
 ```
 
 推流成功。
@@ -61,7 +61,7 @@ screen -X -S 1728.myabc quit
 
 
 ```
-bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffm.sh)
+bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ```
 
 
