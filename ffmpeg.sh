@@ -41,10 +41,10 @@ stream_stop() {
 }
 
 # 开始菜单设置
-echo -e "${yellow}CentOS7 X86_64 FFmpeg无人值守循环推流 For LALA.IM${font}"
+echo -e "${yellow}CentOS7 FFmpeg无人值守循环推流脚本 ${font}"
 echo -e "${red}请确定此脚本目前是在screen窗口内运行的！${font}"
-echo -e "${green}1.安装FFmpeg（机器要安装FFmpeg才能正常推流）${font}"
-echo -e "${green}2.开始无人值守循环推流${font}"
+echo -e "${green}1.安装FFmpeg（需安装才能推流）${font}"
+echo -e "${green}2.开始推流${font}"
 echo -e "${green}3.停止推流${font}"
 
 start_menu() {
