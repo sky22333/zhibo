@@ -24,7 +24,7 @@ screen -S myabc
 开始推流:
 
 ```
-curl -sL -o /root/tao.sh https://raw.githubusercontent.com/sky22333/zhibo/main/tao.sh && chmod 755 /root/tao.sh && /root/tao.sh
+bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ```
 
 推流成功。
@@ -39,19 +39,19 @@ curl -sL -o /root/tao.sh https://raw.githubusercontent.com/sky22333/zhibo/main/t
 screen -ls
 ```       
 
-其中进程ID照你自己的填：
+后台运行进程，替换实际进程ID：
 
 ```
 screen -d 1728.myabc
 ```     
 
 
-如果需要停止：
+关闭该窗口会话：
 
 ```
 screen -X -S 1728.myabc quit
 ```
-关闭该窗口会话
+
 
 
 #
@@ -64,7 +64,7 @@ screen -X -S 1728.myabc quit
 
 
 ```
-curl -sL -o /root/tao.sh https://raw.githubusercontent.com/sky22333/zhibo/main/aaatao.sh && chmod 755 /root/tao.sh && /root/tao.sh
+bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffm.sh)
 ```
 
 
