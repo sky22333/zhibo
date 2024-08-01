@@ -6,9 +6,6 @@ yellow='\033[0;33m'
 red='\033[0;31m'
 font='\033[0m'
 
-# 配置文件
-config_file="/etc/ffmpeg_stream.conf"
-
 ffmpeg_install() {
     if ! command -v ffmpeg &> /dev/null; then
         echo -e "${yellow}正在安装 FFmpeg...${font}"
@@ -17,44 +14,27 @@ ffmpeg_install() {
             echo -e "${green}FFmpeg 安装成功${font}"
         else
             echo -e "${red}FFmpeg 安装失败，请手动安装${font}"
-            exit 1
+            return 1
         fi
     else
         echo -e "${green}FFmpeg 已安装${font}"
     fi
 }
 
-save_config() {
-    echo "RTMP_URL=$1" > "$config_file"
-    echo "VIDEO_FOLDER=$2" >> "$config_file"
-}
-
-load_config() {
-    if [ -f "$config_file" ]; then
-        source "$config_file"
-    fi
-}
-
 stream_start() {
-    load_config
-
-    if [ -z "$RTMP_URL" ] || [ -z "$VIDEO_FOLDER" ]; then
-        read -p "输入你的推流地址和推流码(rtmp协议): " RTMP_URL
-        if [[ ! $RTMP_URL =~ ^rtmp:// ]]; then
-            echo -e "${red}推流地址不合法，请重新运行脚本并输入！${font}"
-            return
-        fi
-
-        read -p "输入你的视频存放目录 (格式仅支持mp4，需要绝对路径，例如/root/video): " VIDEO_FOLDER
-        if [ ! -d "$VIDEO_FOLDER" ]; then
-            echo -e "${red}目录不存在，请检查后重新运行脚本！${font}"
-            return
-        fi
-
-        save_config "$RTMP_URL" "$VIDEO_FOLDER"
+    read -p "输入你的推流地址和推流码(rtmp协议): " RTMP_URL
+    if [[ ! $RTMP_URL =~ ^rtmp:// ]]; then
+        echo -e "${red}推流地址不合法，请重新输入！${font}"
+        return 1
     fi
 
-    echo -e "${yellow}开始后台推流。使用 '状态' 选项查看状态，'停止' 选项停止推流。${font}"
+    read -p "输入你的视频存放目录 (格式仅支持mp4，需要绝对路径，例如/root/video): " VIDEO_FOLDER
+    if [ ! -d "$VIDEO_FOLDER" ]; then
+        echo -e "${red}目录不存在，请检查后重新输入！${font}"
+        return 1
+    fi
+
+    echo -e "${yellow}开始后台推流。${font}"
     nohup bash -c '
         while true; do
             find "'$VIDEO_FOLDER'" -type f -name "*.mp4" | sort | while read -r video; do
