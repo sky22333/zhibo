@@ -15,7 +15,18 @@ MAX_LOG_FILES=5   # 保留的日志文件数量
 ffmpeg_install() {
     if ! command -v ffmpeg &> /dev/null; then
         echo -e "${yellow}正在安装 FFmpeg...${font}"
-        sudo apt update && sudo apt install ffmpeg -y
+        if command -v apt-get &> /dev/null; then
+            sudo apt-get update && sudo apt-get install -y ffmpeg
+        elif command -v yum &> /dev/null; then
+            sudo yum install -y epel-release
+            sudo yum install -y ffmpeg
+        elif command -v dnf &> /dev/null; then
+            sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+            sudo dnf install -y ffmpeg
+        else
+            echo -e "${red}无法确定包管理器，请手动安装 FFmpeg${font}"
+            return 1
+        fi
         if [ $? -eq 0 ]; then
             echo -e "${green}FFmpeg 安装成功${font}"
         else
@@ -30,7 +41,6 @@ ffmpeg_install() {
 save_config() {
     echo "RTMP_URL=$RTMP_URL" > "$CONFIG_FILE"
     echo "VIDEO_FOLDER=$VIDEO_FOLDER" >> "$CONFIG_FILE"
-    echo "USE_HARDWARE_ACCEL=$USE_HARDWARE_ACCEL" >> "$CONFIG_FILE"
     echo "BITRATE=$BITRATE" >> "$CONFIG_FILE"
     echo "FRAMERATE=$FRAMERATE" >> "$CONFIG_FILE"
 }
@@ -60,7 +70,7 @@ clean_old_logs() {
 stream_start() {
     load_config
 
-    if [ -z "$RTMP_URL" ] || [ -z "$VIDEO_FOLDER" ] || [ -z "$USE_HARDWARE_ACCEL" ] || [ -z "$BITRATE" ] || [ -z "$FRAMERATE" ]; then
+    if [ -z "$RTMP_URL" ] || [ -z "$VIDEO_FOLDER" ] || [ -z "$BITRATE" ] || [ -z "$FRAMERATE" ]; then
         read -p "输入你的推流地址和推流码(rtmp协议): " RTMP_URL
         if [[ ! $RTMP_URL =~ ^rtmp:// ]]; then
             echo -e "${red}推流地址不合法，请重新输入！${font}"
@@ -72,9 +82,6 @@ stream_start() {
             echo -e "${red}目录不存在，请检查后重新输入！${font}"
             return 1
         fi
-
-        read -p "是否使用硬件加速？(y/n): " use_hw
-        USE_HARDWARE_ACCEL=$([ "$use_hw" = "y" ] && echo "true" || echo "false")
 
         read -p "输入视频比特率 (默认 1200k): " BITRATE
         BITRATE=${BITRATE:-1200k}
@@ -99,11 +106,7 @@ stream_start() {
             for video in "${video_files[@]}"; do
                 if [ -f "$video" ]; then
                     echo "正在推流: $video" >> "'$LOG_FILE'"
-                    if [ "'$USE_HARDWARE_ACCEL'" = "true" ]; then
-                        ffmpeg -hwaccel auto -re -i "$video" -c:v h264_nvenc -preset p1 -tune ll -b:v '$BITRATE' -r '$FRAMERATE' -c:a aac -b:a 92k -f flv "'$RTMP_URL'" 2>> "'$LOG_FILE'" || true
-                    else
-                        ffmpeg -re -i "$video" -c:v libx264 -preset veryfast -tune zerolatency -b:v '$BITRATE' -r '$FRAMERATE' -c:a aac -b:a 92k -f flv "'$RTMP_URL'" 2>> "'$LOG_FILE'" || true
-                    fi
+                    ffmpeg -re -i "$video" -c:v libx264 -preset veryfast -tune zerolatency -b:v '$BITRATE' -r '$FRAMERATE' -c:a aac -b:a 92k -f flv "'$RTMP_URL'" 2>> "'$LOG_FILE'" || true
                 fi
             done
         done
