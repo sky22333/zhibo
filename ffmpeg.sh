@@ -39,7 +39,7 @@ stream_start() {
         while true; do
             video_files=("'$VIDEO_FOLDER'"/*.mp4)
             if [ ${#video_files[@]} -eq 0 ]; then
-                echo "没有找到mp4文件，等待10秒后重试..."
+                echo "没有找到mp4文件，请重试..."
                 sleep 10
                 continue
             fi
@@ -60,7 +60,7 @@ stream_stop() {
         pid=$(cat /var/run/ffmpeg_stream.pid)
         kill $pid
         rm /var/run/ffmpeg_stream.pid
-        echo -e "${yellow}推流已停止${font}"
+        echo -e "${yellow}关闭成功，推流即将停止。${font}"
     else
         echo -e "${red}没有正在运行的推流进程${font}"
     fi
