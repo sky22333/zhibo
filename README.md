@@ -8,52 +8,14 @@
 
 
 ### 一键脚本
+适用于ubuntu/debian系统
 
 #### 先创建文件夹并放入需要推流的mp4视频
-
-安装screen：
-```
-sudo apt update
-sudo apt install screen -y
-```
-
-创建一个新的会话窗口:
-
-```
-screen -S myzhibo
-```
-
-
-开始推流:
-
+运行脚本
 ```
 bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ```
 
-推流成功。
-
-
-
-然后新开一个终端窗口输入以下命令保持后台运行
-
-查看窗口会话：
-
-```
-screen -ls
-```       
-
-后台运行会话窗口，替换实际进程ID：
-
-```
-screen -d 1728.myzhibo
-```     
-
-
-关闭该窗口会话：
-
-```
-screen -X -S 1728.myzhibo quit
-```
 
 
 
