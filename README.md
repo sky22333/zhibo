@@ -20,7 +20,9 @@ bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 
 
 
-
+---
+---
+---
 
 ## 拉流直播源然后推流到指定rtmp地址
 
@@ -59,7 +61,9 @@ disown
 pkill -f "ffmpeg"
 ```
 
-
+---
+---
+---
 
 ##  带宽码率推荐:
 
