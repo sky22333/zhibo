@@ -11,6 +11,12 @@
 
 #### 先创建文件夹并放入需要推流的mp4视频
 
+安装screen：
+```
+sudo apt update
+sudo apt install screen -y
+```
+
 创建一个新的会话窗口:
 
 ```
