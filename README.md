@@ -42,7 +42,7 @@ bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 screen -ls
 ```       
 
-后台运行进程，替换实际进程ID：
+后台运行会话窗口，替换实际进程ID：
 
 ```
 screen -d 1728.myzhibo
