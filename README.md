@@ -14,7 +14,7 @@
 创建一个新的会话窗口:
 
 ```
-screen -S myabc
+screen -S myzhibo
 ```
 
 
@@ -39,19 +39,16 @@ screen -ls
 后台运行进程，替换实际进程ID：
 
 ```
-screen -d 1728.myabc
+screen -d 1728.myzhibo
 ```     
 
 
 关闭该窗口会话：
 
 ```
-screen -X -S 1728.myabc quit
+screen -X -S 1728.myzhibo quit
 ```
 
-
-
-#
 
 
 
