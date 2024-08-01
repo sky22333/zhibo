@@ -7,9 +7,9 @@
 
 
 
-### 一键脚本（ubuntu系统）
+### 一键脚本
 
-#### 请创建文件夹并放入需要推流的mp4视频
+#### 先创建文件夹并放入需要推流的mp4视频
 
 创建一个新的会话窗口:
 
@@ -21,7 +21,7 @@ screen -S myabc
 开始推流:
 
 ```
-bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffm.sh)
+bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ```
 
 推流成功。
@@ -53,16 +53,6 @@ screen -X -S 1728.myabc quit
 
 #
 
-
-#
-
-###  CentOS 7 一键脚本
-
-
-
-```
-bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
-```
 
 
 
