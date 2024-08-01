@@ -28,7 +28,7 @@ stream_start() {
         return 1
     fi
 
-    read -p "输入你的视频存放目录 (格式仅支持mp4，需要绝对路径，例如/root/video): " VIDEO_FOLDER
+    read -p "输入你的视频存放目录 (格式仅支持mp4，需要绝对路径，例如/home/video): " VIDEO_FOLDER
     if [ ! -d "$VIDEO_FOLDER" ]; then
         echo -e "${red}目录不存在，请检查后重新输入！${font}"
         return 1
@@ -37,8 +37,17 @@ stream_start() {
     echo -e "${yellow}开始后台推流。${font}"
     nohup bash -c '
         while true; do
-            find "'$VIDEO_FOLDER'" -type f -name "*.mp4" | sort | while read -r video; do
-                ffmpeg -re -i "$video" -c:v libx264 -preset veryfast -tune zerolatency -b:v 1200k -r 30 -c:a aac -b:a 92k -strict -2 -f flv "'$RTMP_URL'" || true
+            video_files=("'$VIDEO_FOLDER'"/*.mp4)
+            if [ ${#video_files[@]} -eq 0 ]; then
+                echo "没有找到mp4文件，等待10秒后重试..."
+                sleep 10
+                continue
+            fi
+            for video in "${video_files[@]}"; do
+                if [ -f "$video" ]; then
+                    echo "正在推流: $video"
+                    ffmpeg -re -i "$video" -c:v libx264 -preset veryfast -tune zerolatency -b:v 1200k -r 30 -c:a aac -b:a 92k -strict -2 -f flv "'$RTMP_URL'" || true
+                fi
             done
         done
     ' > /var/log/ffmpeg_stream.log 2>&1 &
