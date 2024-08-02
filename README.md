@@ -8,9 +8,9 @@
 
 
 ### 一键脚本
-适用于ubuntu/debian系统，可遍历推流多个视频
+可遍历推流多个视频
 
-#### 先创建文件夹并放入需要推流的mp4视频
+#### 先把需要推流的mp4视频上传到服务器
 运行脚本
 ```
 bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
