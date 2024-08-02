@@ -3,12 +3,12 @@
 
 
 
- [Docker部署](https://github.com/sky22333/Docker-Hub/blob/main/docker/docker%20ffmpeg.md) 只能推流单个视频
+ [Docker部署](https://github.com/sky22333/Docker-Hub/blob/main/docker/docker%20ffmpeg.md) 只能循环推流单个视频
 
 
 
 ### 一键脚本
-可遍历推流多个视频
+可循环推流多个视频
 
 #### 先把需要推流的mp4视频上传到服务器
 运行脚本
@@ -24,7 +24,7 @@ bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ---
 ---
 
-## 拉流直播源然后推流到指定rtmp地址
+### 拉流直播源然后推流到指定rtmp地址
 
 
 #### 安装FFmpeg：
