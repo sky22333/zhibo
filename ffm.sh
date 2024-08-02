@@ -83,10 +83,10 @@ stream_start() {
             return 1
         fi
 
-        read -p "输入视频比特率 (默认 1200k): " BITRATE
+        read -p "输入视频比特率 (回车默认 1200k): " BITRATE
         BITRATE=${BITRATE:-1200k}
 
-        read -p "输入视频帧率 (默认 30): " FRAMERATE
+        read -p "输入视频帧率 (回车默认 30): " FRAMERATE
         FRAMERATE=${FRAMERATE:-30}
 
         save_config
