@@ -10,11 +10,12 @@
 ### 一键脚本
 - 可循环推流多个视频
 - 建议2核以上的配置
+- 需要MP4格式的视频
 - 视频码率越高需要的配置越高
 - 所有rtmp协议的平台都可推流
 - 支持Debian 11，Ubuntu 18.04，CentOS 7，以上的系统
 
-#### 先把需要推流的mp4视频上传到服务器
+#### 先把需要推流的MP4视频上传到服务器
 运行脚本
 ```
 bash <(wget -qO- -o- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
