@@ -67,29 +67,38 @@ clean_old_logs() {
     find $(dirname "$LOG_FILE") -name "$(basename "$LOG_FILE")*" -type f | sort -r | tail -n +$((MAX_LOG_FILES+1)) | xargs -r rm
 }
 
+input_stream_params() {
+    read -p "输入你的推流地址和推流码(rtmp协议): " RTMP_URL
+    if [[ ! $RTMP_URL =~ ^rtmp:// ]]; then
+        echo -e "${red}推流地址不合法，请重新输入！${font}"
+        return 1
+    fi
+
+    read -p "输入你的视频存放目录 (格式仅支持mp4，需要绝对路径，例如/home/video): " VIDEO_FOLDER
+    if [ ! -d "$VIDEO_FOLDER" ]; then
+        echo -e "${red}目录不存在，请检查后重新输入！${font}"
+        return 1
+    fi
+
+    read -p "输入视频比特率 (回车默认 1800k): " BITRATE
+    BITRATE=${BITRATE:-1800k}
+
+    read -p "输入视频帧率 (回车默认 30): " FRAMERATE
+    FRAMERATE=${FRAMERATE:-30}
+
+    save_config
+}
+
 stream_start() {
     load_config
 
-    if [ -z "$RTMP_URL" ] || [ -z "$VIDEO_FOLDER" ] || [ -z "$BITRATE" ] || [ -z "$FRAMERATE" ]; then
-        read -p "输入你的推流地址和推流码(rtmp协议): " RTMP_URL
-        if [[ ! $RTMP_URL =~ ^rtmp:// ]]; then
-            echo -e "${red}推流地址不合法，请重新输入！${font}"
-            return 1
-        fi
-
-        read -p "输入你的视频存放目录 (格式仅支持mp4，需要绝对路径，例如/home/video): " VIDEO_FOLDER
-        if [ ! -d "$VIDEO_FOLDER" ]; then
-            echo -e "${red}目录不存在，请检查后重新输入！${font}"
-            return 1
-        fi
-
-        read -p "输入视频比特率 (回车默认 2500k): " BITRATE
-        BITRATE=${BITRATE:-2500k}
-
-        read -p "输入视频帧率 (回车默认 30): " FRAMERATE
-        FRAMERATE=${FRAMERATE:-30}
-
-        save_config
+    echo -e "${yellow}是否要重新输入推流参数？(y/n)${font}"
+    read -p "" choice
+    if [[ $choice =~ ^[Yy]$ ]]; then
+        input_stream_params
+    elif [ -z "$RTMP_URL" ] || [ -z "$VIDEO_FOLDER" ] || [ -z "$BITRATE" ] || [ -z "$FRAMERATE" ]; then
+        echo -e "${red}缺少必要的推流参数，请输入：${font}"
+        input_stream_params
     fi
 
     echo -e "${yellow}开始后台推流。${font}"
@@ -106,12 +115,16 @@ stream_start() {
             for video in "${video_files[@]}"; do
                 if [ -f "$video" ]; then
                     echo "正在推流: $video" >> "'$LOG_FILE'"
-                    nice -n 10 ffmpeg -re -i "$video" \
+                    ffmpeg -re -i "$video" \
                         -c:v libx264 -preset veryfast -tune zerolatency \
                         -b:v '$BITRATE' -maxrate '$BITRATE' -bufsize $((${BITRATE%k}*2))k \
                         -r '$FRAMERATE' -g $((FRAMERATE*2)) -keyint_min $FRAMERATE \
                         -c:a aac -b:a 128k -ar 44100 \
-                        -f flv "'$RTMP_URL'" 2>> "'$LOG_FILE'" || true
+                        -f flv "'$RTMP_URL'" 2>> "'$LOG_FILE'"
+                    if [ $? -ne 0 ]; then
+                        echo "推流失败，10秒后重试..." >> "'$LOG_FILE'"
+                        sleep 10
+                    fi
                 fi
             done
         done
@@ -151,7 +164,7 @@ stream_status() {
 }
 
 show_menu() {
-    echo -e "${yellow}==== FFmpeg 无人值守循环推流脚本(高画质版) ====${font}"
+    echo -e "${yellow}==== FFmpeg 无人值守循环推流脚本（高画质版） ====${font}"
     echo -e "${green}1. 安装 FFmpeg${font}"
     echo -e "${green}2. 开始推流${font}"
     echo -e "${green}3. 停止推流${font}"
