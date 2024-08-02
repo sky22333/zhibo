@@ -3,12 +3,12 @@
 
 
 
- [Docker部署](https://github.com/sky22333/Docker-Hub/blob/main/docker/docker%20ffmpeg.md) 只能循环推流单个视频
+ [Docker部署](https://github.com/sky22333/Docker-Hub/blob/main/docker/docker%20ffmpeg.md) 适合推流单个视频
 
 
 
 ### 一键脚本
-- 可循环推流多个视频
+- 适合推流多个视频
 - 建议2核以上的配置
 - 需要MP4格式的视频
 - 视频码率越高需要的配置越高
