@@ -107,6 +107,7 @@ stream_start() {
                 if [ -f "$video" ]; then
                     echo "正在推流: $video" >> "'$LOG_FILE'"
                     ffmpeg -re -i "$video" -c:v libx264 -preset veryfast -tune zerolatency -b:v '$BITRATE' -r '$FRAMERATE' -c:a aac -b:a 92k -f flv "'$RTMP_URL'" 2>> "'$LOG_FILE'" || true
+                    sleep 1
                 fi
             done
         done
