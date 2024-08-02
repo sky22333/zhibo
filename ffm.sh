@@ -9,7 +9,7 @@ font='\033[0m'
 # 配置文件路径
 CONFIG_FILE="/etc/ffmpeg_stream.conf"
 LOG_FILE="/var/log/ffmpeg_stream.log"
-MAX_LOG_SIZE=10M  # 日志文件最大大小
+MAX_LOG_SIZE=5M  # 日志文件最大大小
 MAX_LOG_FILES=5   # 保留的日志文件数量
 
 ffmpeg_install() {
