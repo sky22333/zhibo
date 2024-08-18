@@ -16,7 +16,7 @@ ffmpeg_install() {
     if ! command -v ffmpeg &> /dev/null; then
         echo -e "${yellow}正在安装 FFmpeg...${font}"
         if command -v apt-get &> /dev/null; then
-            sudo apt-get update && sudo apt-get install -y ffmpeg
+            sudo apt-get update && sudo apt-get install -yq ffmpeg
         elif command -v yum &> /dev/null; then
             sudo yum install -y epel-release
             sudo yum install -y ffmpeg
