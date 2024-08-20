@@ -39,7 +39,7 @@ sudo apt update
 
 
 ```
-sudo apt install ffmpeg -y
+sudo apt install ffmpeg -yq
 ```
 
 
