@@ -47,7 +47,7 @@ sudo apt install ffmpeg -yq
 
 原画质
 ```
-ffmpeg -thread_queue_size 512 -i "直播源URL" -c:v copy -c:a aac -b:a 128k -f flv "推流地址和推流码"
+ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v copy -c:a aac -b:a 128k -f flv "推流地址和推流码"
 ```
 
 
@@ -56,7 +56,7 @@ ffmpeg -thread_queue_size 512 -i "直播源URL" -c:v copy -c:a aac -b:a 128k -f 
 #### 后台运行
 
 ```
-nohup ffmpeg -thread_queue_size 512 -i "直播源URL" -c:v copy -c:a aac -b:a 128k -f flv "推流地址和推流码" > /dev/null 2>&1 &
+nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v copy -c:a aac -b:a 128k -f flv "推流地址和推流码" > /dev/null 2>&1 &
 ```
 
 
@@ -71,7 +71,7 @@ pkill -f "ffmpeg"
 
 #### 较高画质
 ```
-nohup ffmpeg -thread_queue_size 512 -i "直播源URL" -c:v libx264 -preset medium -crf 18 -tune film -c:a aac -b:a 128k -f flv "推流地址和推流码" > /dev/null 2>&1 &
+nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v libx264 -preset medium -crf 18 -tune film -c:a aac -b:a 128k -f flv "推流地址和推流码" > /dev/null 2>&1 &
 ```
 
 
