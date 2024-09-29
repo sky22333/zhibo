@@ -28,7 +28,7 @@ bash <(wget -qO- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ---
 
 ### 拉流直播源然后推流到指定rtmp地址
-
+大部分地址格式都支持
 
 #### 安装FFmpeg：
 
@@ -44,8 +44,7 @@ sudo apt install ffmpeg -yq
 
 
 ####  前台运行（测试）
-
-原画质
+>原画质
 ```
 ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v copy -c:a aac -b:a 128k -f flv "推流地址和推流码"
 ```
