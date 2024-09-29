@@ -48,6 +48,13 @@ sudo apt install ffmpeg -yq
 ```
 ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v libx264 -preset ultrafast -tune zerolatency -c:a aac -strict experimental -f flv "推流地址和推流码"
 ```
+原画质
+```
+ffmpeg -thread_queue_size 16 -i "直播源URL" -c:v copy -c:a copy -f flv "推流地址和推流码"
+```
+
+
+
 
 #### 后台运行
 
