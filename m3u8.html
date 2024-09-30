@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m3u8在线播放器</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flv.js@latest"></script>
+    <style>
+        body {
+            background: rgb(247, 247, 250); /* 背景颜色 */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-title {
+            font-family: 'Arial', sans-serif;
+            color: #430f6b;
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #dplayer-container {
+            width: 70%;
+            max-width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px; /* 向上移动 */
+        }
+        @media screen and (max-width: 768px) {
+            #dplayer-container {
+                width: 100%;
+            }
+        }
+        #dplayer {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid black;
+            box-shadow: 0 0 15px 10px rgba(255, 255, 255, 0.5);
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px; /* 向上移动 */
+            width: 60%; /* 输入框宽度 */
+        }
+        .url-input {
+            flex-grow: 1; /* 输入框宽度自动调整 */
+            padding: 10px;
+            border: 2px solid #7e76c8;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        .play-button {
+            width: 100px;
+            height: 40px;
+            background: linear-gradient(to right, #b19cd9, #7e76c8);
+            border: 2px solid #7e76c8;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .play-button:hover {
+            background: linear-gradient(to right, #7e76c8, #b19cd9);
+            border-color: #b19cd9;
+        }
+        @media (max-width: 600px) {
+            .input-container {
+                flex-direction: column;
+                align-items: stretch;
+                width: 80%; /* 小屏幕输入框宽度 */
+            }
+            .url-input {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+            .play-button {
+                width: 100%;
+                line-height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="video-title">m3u8在线播放器</h1>
+    <div id="dplayer-container">
+        <div id="dplayer"></div>
+    </div>
+    <div class="input-container">
+        <input type="text" class="url-input" placeholder="请输入m3u8视频链接">
+        <div class="play-button" onclick="playVideo()">播放</div>
+    </div>
+    <script>
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            theme: '#E6E6FA',
+            video: {
+                url: '',
+                type: 'hls',
+            }
+        });
+
+        function playVideo() {
+            const urlInput = document.querySelector('.url-input').value;
+            if (urlInput) {
+                dp.switchVideo({
+                    url: urlInput,
+                    type: 'hls'
+                });
+                dp.play();
+            }
+        }
+    </script>
+</body>
+</html>
