@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>m3u8在线播放器</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flv.js@latest"></script>
     <style>
         body {
-            background: rgb(247, 247, 250); /* 背景颜色 */
+            background: rgb(247, 247, 250);
             margin: 0;
             height: 100vh;
             display: flex;
@@ -31,7 +31,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 10px; /* 向上移动 */
+            margin-bottom: 10px;
         }
         @media screen and (max-width: 768px) {
             #dplayer-container {
@@ -49,11 +49,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 10px; /* 向上移动 */
-            width: 60%; /* 输入框宽度 */
+            margin-top: 10px;
+            width: 60%;
         }
         .url-input {
-            flex-grow: 1; /* 输入框宽度自动调整 */
+            flex-grow: 1;
             padding: 10px;
             border: 2px solid #7e76c8;
             border-radius: 5px;
@@ -81,7 +81,7 @@
             .input-container {
                 flex-direction: column;
                 align-items: stretch;
-                width: 80%; /* 小屏幕输入框宽度 */
+                width: 80%;
             }
             .url-input {
                 margin-bottom: 10px;
@@ -109,16 +109,22 @@
             theme: '#E6E6FA',
             video: {
                 url: '',
-                type: 'hls',
+                type: 'customHls',
+                customType: {
+                    customHls: function (video, player) {
+                        const hls = new Hls();
+                        hls.loadSource(video.src);
+                        hls.attachMedia(video);
+                    }
+                }
             }
         });
-
         function playVideo() {
             const urlInput = document.querySelector('.url-input').value;
             if (urlInput) {
                 dp.switchVideo({
                     url: urlInput,
-                    type: 'hls'
+                    type: 'customHls'
                 });
                 dp.play();
             }
