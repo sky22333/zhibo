@@ -1,6 +1,7 @@
 services:
   ffmpeg:
-    build: .
+    image: dapiaoliang666/ffmpeg
+    container_name: ffmpeg
     network_mode: host
     environment:
       - SOURCE_URL=直播源URL
