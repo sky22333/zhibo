@@ -1,7 +1,10 @@
-FROM jrottenberg/ffmpeg:5-alpine
+FROM python:3.12-alpine3.20
 
-RUN apk add --no-cache python3 py3-pip && \
-    pip3 install -U yt-dlp
+# 安装 FFmpeg 和 yt-dlp
+RUN apk add --no-cache ffmpeg && \
+    pip install -U yt-dlp
+
+WORKDIR /app
 
 CMD ["sh", "-c", "while true; do yt-dlp -f best -o - \"$YOUTUBE_URL\" | ffmpeg -re -i pipe:0 -c copy -f flv \"$RTMP_URL\"; done"]
 
