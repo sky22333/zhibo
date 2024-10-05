@@ -1,6 +1,5 @@
 FROM python:3.12-alpine3.20
 
-# 安装 FFmpeg 和 yt-dlp
 RUN apk add --no-cache ffmpeg && \
     pip install -U yt-dlp
 
