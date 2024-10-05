@@ -1,0 +1,8 @@
+# 拉流视频地址链接推流
+services:
+  ffmpeg:
+    build: .
+    environment:
+      YOUTUBE_URL: "视频链接"
+      RTMP_URL: "推流地址和密钥"
+    restart: always
