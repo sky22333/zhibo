@@ -1,4 +1,4 @@
-FROM jrottenberg/ffmpeg
+FROM jrottenberg/ffmpeg:5-alpine
 
 RUN apk add --no-cache python3 py3-pip && \
     pip3 install -U yt-dlp
