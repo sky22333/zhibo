@@ -1,4 +1,3 @@
-# 拉流视频地址链接推流
 services:
   ffmpeg:
     build: .
