@@ -1,9 +1,0 @@
-services:
-  ffmpeg:
-    image: dapiaoliang666/ffmpeg
-    container_name: ffmpeg
-    network_mode: host
-    environment:
-      - SOURCE_URL=直播源URL
-      - STREAM_URL=推流地址和推流码
-    restart: always

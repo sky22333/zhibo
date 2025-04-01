@@ -1,7 +1,9 @@
 services:
   ffmpeg:
     build: .
+    container_name: ffmpeg
+    network_mode: host
     environment:
-      VIDEO_URL: "视频链接或直播链接"
-      RTMP_URL: "推流地址和密钥"
+      - SOURCE_URL=直播源URL
+      - STREAM_URL=推流地址和推流码
     restart: always
