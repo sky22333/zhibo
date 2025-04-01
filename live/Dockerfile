@@ -1,7 +1,7 @@
 # 使用最小化的Python Alpine镜像
 FROM python:3.12-alpine
 
-# 安装必要组件（修正版）
+# 安装必要组件
 RUN apk add --no-cache \
     ffmpeg \
     build-base \
