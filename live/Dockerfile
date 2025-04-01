@@ -15,8 +15,13 @@ RUN chmod +x stream_seamless.py
 # 创建视频目录
 RUN mkdir -p /videos && chmod 777 /videos
 
-# 可以转码但对CPU要求很高："-c:v libx264 -preset fast -b:v 1800k -c:a aac -b:a 92k -f flv"
+# 推流参数环境变量（不转码）
 ENV STREAM_URL="" \
-    FFMPEG_OPTIONS="-c:v copy -c:a copy -f flv"
+    FFMPEG_OPTIONS="-c:v copy -c:a copy -f flv \
+    -flvflags no_duration_filesize+no_sequence_end \
+    -fflags +genpts+discardcorrupt \
+    -avoid_negative_ts make_zero \
+    -vsync passthrough \
+    -movflags faststart"
 
 CMD ["python", "stream_seamless.py"]

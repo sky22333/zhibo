@@ -30,8 +30,8 @@ def start_stream(stream_url, concat_file):
             *os.getenv('FFMPEG_OPTIONS', '').split(),
             stream_url
         ],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL
+        stdout=sys.stdout,
+        stderr=sys.stderr
     )
     return process.wait()
 
