@@ -13,7 +13,7 @@ RUN apk add --no-cache \
 WORKDIR /app
 
 # 复制推流脚本
-COPY . .
+COPY stream_seamless.py .
 
 # 创建视频目录
 RUN mkdir -p /videos
