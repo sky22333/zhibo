@@ -1,9 +1,13 @@
+# 使用最小化的Python Alpine镜像
 FROM python:3.12-alpine
 
-# 安装必要组件
+# 安装必要组件（修正版）
 RUN apk add --no-cache \
     ffmpeg \
-    && pip install --no-cache-dir psutil
+    build-base \
+    linux-headers \
+    && pip install --no-cache-dir psutil \
+    && apk del build-base linux-headers  # 安装后清理构建依赖
 
 # 设置工作目录
 WORKDIR /app
