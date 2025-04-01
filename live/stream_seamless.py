@@ -7,7 +7,7 @@ import sys
 import tempfile
 
 def log(message):
-    """实时日志输出函数（核心优化点）"""
+    """实时日志输出函数"""
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
     sys.stdout.write(f"{timestamp} {message}\n")
     sys.stdout.flush()
@@ -26,7 +26,7 @@ def create_concat_file(files):
         return f.name
 
 def start_stream(stream_url, concat_file):
-    """启动FFmpeg推流（带实时日志输出）"""
+    """启动FFmpeg推流"""
     ffmpeg_cmd = [
         "ffmpeg",
         "-loglevel", "warning",
