@@ -19,12 +19,19 @@
 bash <(wget -qO- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ```
 
-
-
-
-
 ---
 ---
+
+### Docker
+```
+docker run -d \
+  --name ffmpeg \
+  --restart always \
+  -e STREAM_URL=rtmp://推流地址/推流密钥 \
+  -v $(pwd):/videos \
+  ghcr.io/sky22333/zhibo
+```
+
 ---
 
 ### 拉流直播源然后推流到指定rtmp地址
