@@ -41,9 +41,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          cd live \
           docker buildx build --push \
-            --file ./Dockerfile \
+            --file live/Dockerfile \
             --platform linux/amd64 \
             --tag ghcr.io/${{ github.repository }}:${{ env.VERSION }} \
             --tag ghcr.io/${{ github.repository }}:latest \
