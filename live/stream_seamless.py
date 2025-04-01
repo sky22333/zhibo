@@ -17,7 +17,7 @@ def start_stream(stream_url, concat_list):
     """启动FFmpeg推流进程"""
     ffmpeg_cmd = [
         "ffmpeg",
-        "-loglevel", "info",
+        "-loglevel", "warning",
         "-re",
         "-f", "concat",
         "-safe", "0",
