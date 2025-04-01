@@ -4,76 +4,109 @@ import subprocess
 import time
 from glob import glob
 import sys
+import tempfile
+
+def log(message):
+    """实时日志输出函数（核心优化点）"""
+    timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+    sys.stdout.write(f"{timestamp} {message}\n")
+    sys.stdout.flush()
 
 def get_video_files():
     """获取排序后的视频文件列表"""
-    return sorted(glob(f"{os.getenv('VIDEO_DIR', '/videos')}/*.mp4"))
+    files = sorted(glob("/videos/*.mp4"), key=lambda x: x.lower())
+    log(f"发现 {len(files)} 个视频文件")
+    return files
 
-def generate_concat_list(files):
-    """生成FFmpeg concat列表"""
-    return "".join(f"file '{f}'\n" for f in files)
+def create_concat_file(files):
+    """创建临时concat文件"""
+    concat_content = "".join(f"file '{f}'\n" for f in files)
+    with tempfile.NamedTemporaryFile(mode='w+', suffix='.txt', delete=False) as f:
+        f.write(concat_content)
+        return f.name
 
-def start_stream(stream_url, concat_list):
-    """启动FFmpeg推流进程"""
+def start_stream(stream_url, concat_file):
+    """启动FFmpeg推流（带实时日志输出）"""
     ffmpeg_cmd = [
         "ffmpeg",
         "-loglevel", "warning",
         "-re",
         "-f", "concat",
         "-safe", "0",
-        "-i", "-",
+        "-protocol_whitelist", "file,concat",
+        "-i", concat_file,
         *os.getenv('FFMPEG_OPTIONS', '').split(),
         stream_url
     ]
     
-    return subprocess.Popen(
+    log("开始推流进程...")
+    process = subprocess.Popen(
         ffmpeg_cmd,
-        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
         text=True,
-        bufsize=1,
-        universal_newlines=True
+        bufsize=1
     )
+    
+    # 实时转发FFmpeg日志
+    while True:
+        line = process.stdout.readline()
+        if not line and process.poll() is not None:
+            break
+        if line:
+            sys.stdout.write(line)
+            sys.stdout.flush()
+    
+    return process.returncode
 
 def main():
-    stream_url = os.getenv("STREAM_URL")
-    if not stream_url:
-        print("错误：必须设置 STREAM_URL 环境变量")
-        exit(1)
+    if not (stream_url := os.getenv("STREAM_URL")):
+        log("错误：必须设置 STREAM_URL 环境变量")
+        sys.exit(1)
 
-    print("=== 循环遍历推流 ===")
-    print(f"Python 版本: {'.'.join(map(str, sys.version_info[:3]))}")
-    print(f"推流地址: {stream_url}")
-    print(f"编码参数: {os.getenv('FFMPEG_OPTIONS')}")
-    print("=====================")
+    log("=== 推流服务启动 ===")
+    log(f"Python 版本: {sys.version.split()[0]}")
+    log(f"推流地址: {stream_url}")
+    log(f"编码参数: {os.getenv('FFMPEG_OPTIONS')}")
+    log("=====================")
+
+    retry_count = 0
+    max_retries = 5
 
     while True:
-        files = get_video_files()
-        if not files:
-            print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} 未找到MP4视频文件，10秒后重试...")
-            time.sleep(10)
-            continue
+        try:
+            files = get_video_files()
+            if not files:
+                log("未找到MP4文件，10秒后重试...")
+                time.sleep(10)
+                continue
 
-        print(f"\n{time.strftime('%Y-%m-%d %H:%M:%S')} 发现 {len(files)} 个视频文件")
-        print("即将推流的视频列表:")
-        for i, f in enumerate(files, 1):
-            print(f"{i}. {os.path.basename(f)}")
-        
-        concat_list = generate_concat_list(files)
-        
-        print(f"\n{time.strftime('%Y-%m-%d %H:%M:%S')} 开始无缝推流...")
-        proc = start_stream(stream_url, concat_list)
-        proc.communicate(input=concat_list)
-        
-        if proc.returncode != 0:
-            print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} 推流中断，10秒后重新尝试...")
+            log("视频列表:")
+            for i, f in enumerate(files, 1):
+                log(f"  {i}. {os.path.basename(f)}")
+
+            concat_file = create_concat_file(files)
+            log("开始无缝推流...")
+            
+            return_code = start_stream(stream_url, concat_file)
+            os.unlink(concat_file)
+            
+            if return_code != 0:
+                retry_count += 1
+                log(f"推流中断 (尝试 {retry_count}/{max_retries})")
+                if retry_count >= max_retries:
+                    log("达到最大重试次数，服务终止")
+                    sys.exit(1)
+                time.sleep(min(2**retry_count, 30))
+            else:
+                retry_count = 0
+
+        except KeyboardInterrupt:
+            log("\n用户手动停止推流")
+            sys.exit(0)
+        except Exception as e:
+            log(f"发生未预期错误: {str(e)}")
             time.sleep(10)
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print(f"\n{time.strftime('%Y-%m-%d %H:%M:%S')} 用户手动停止推流")
-        sys.exit(0)
-    except Exception as e:
-        print(f"\n{time.strftime('%Y-%m-%d %H:%M:%S')} 发生未预期错误: {str(e)}")
-        sys.exit(1)
+    main()
