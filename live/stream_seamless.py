@@ -21,7 +21,7 @@ def start_stream(stream_url, concat_file):
     process = subprocess.Popen(
         [
             "ffmpeg",
-            "-loglevel", "error",
+            "-loglevel", "warning",
             "-re",
             "-f", "concat",
             "-safe", "0",
