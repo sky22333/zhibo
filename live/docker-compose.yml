@@ -6,4 +6,4 @@ services:
     environment:
       - STREAM_URL=rtmp://推流地址/推流密钥
     volumes:
-      - ./:/videos
+      - /home:/videos
