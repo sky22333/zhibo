@@ -7,7 +7,7 @@ RUN apk add --no-cache \
     build-base \
     linux-headers \
     && pip install --no-cache-dir psutil \
-    && apk del build-base linux-headers  # 安装后清理构建依赖
+    && apk del build-base linux-headers
 
 # 设置工作目录
 WORKDIR /app
