@@ -15,14 +15,17 @@ bash <(wget -qO- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ---
 ---
 
-### Docker
+### Docker-compose
 ```
-docker run -d \
-  --name ffmpeg \
-  --restart always \
-  -e STREAM_URL=rtmp://推流地址/推流密钥 \
-  -v $(pwd):/videos \
-  ghcr.io/sky22333/zhibo
+services:
+  ffmpeg:
+    image: ghcr.io/sky22333/zhibo
+    container_name: ffmpeg
+    restart: always
+    environment:
+      - STREAM_URL=rtmp://推流地址/推流密钥
+    volumes:
+      - ./:/videos
 ```
 
 ---
