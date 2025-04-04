@@ -5,6 +5,10 @@ on:
     - cron: '0 19 * * *'  # 每天19点UTC（北京时间为凌晨3点）
   workflow_dispatch:
 
+permissions:
+  contents: write  # 允许 GitHub Actions 对仓库内容进行写入操作
+  pull-requests: write  # 如果需要修改 pull requests，也可以加上这个权限
+
 jobs:
   fetch-iptv-links:
     runs-on: ubuntu-latest
