@@ -1,0 +1,30 @@
+name: 定时提取有效iptv链接
+
+on:
+  schedule:
+    - cron: '0 19 * * *'  # 每天凌晨3点（北京时间为UTC+8，即UTC时间为前一天的19点）
+  workflow_dispatch:
+
+jobs:
+  fetch-iptv-links:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Fetch IPTV Links
+      run: |
+        curl -o iptv.txt https://live.izbds.com/tv/iptv4.txt
+        grep -Eo 'https://[^ ]+\.m3u8' iptv.txt > filtered_links.txt
+        awk -F, '{if(NR%2==1) printf "%s,", $1; else printf "%s\n", $1}' iptv.txt | grep -F -f filtered_links.txt > docs/iptv.json
+
+    - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add docs/iptv.json
+        git commit -m '更新IPTV链接'
+        git push
