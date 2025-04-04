@@ -2,7 +2,7 @@ name: 定时提取IPTV链接
 
 on:
   schedule:
-    - cron: '0 19 * * *'  # 每天凌晨3点（北京时间为UTC+8，即UTC时间为前一天的19点）
+    - cron: '0 19 * * *'  # 每天19点UTC（北京时间为凌晨3点）
   workflow_dispatch:
 
 jobs:
@@ -11,14 +11,15 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Fetch IPTV Links
       run: |
         set -e
-        curl -o iptv.txt https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt
-        grep -Eo 'https://[^ ]+\.m3u8' iptv.txt > filtered_links.txt
-        awk -F, '{if(NR%2==1) printf "%s,", $1; else printf "%s\n", $1}' iptv.txt | grep -F -f filtered_links.txt > docs/iptv.json
+        # 下载 IPTV 链接列表并提取有效链接
+        curl -s https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt | \
+        grep -Eo 'https://[^ ]+\.m3u8' | \
+        jq -R . | jq -s . > docs/iptv.json  # 使用 jq 处理并保存为 JSON 格式
 
     - name: Commit and push changes
       env:
