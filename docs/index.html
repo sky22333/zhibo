@@ -78,6 +78,70 @@
             background: linear-gradient(to right, #7e76c8, #b19cd9);
             border-color: #b19cd9;
         }
+        /* Channel List Styles */
+        .channel-list-container {
+            width: 60%;
+            margin-top: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-height: 300px;
+            overflow-y: auto;
+            border: 2px solid #7e76c8;
+        }
+        .channel-list-header {
+            background: linear-gradient(to right, #b19cd9, #7e76c8);
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .channel-list {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        .channel-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+        .channel-item:last-child {
+            border-bottom: none;
+        }
+        .channel-item:hover {
+            background-color: #f0ebfa;
+        }
+        .channel-item.active {
+            background-color: #e6e0f8;
+            border-left: 4px solid #7e76c8;
+        }
+        .channel-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            fill: #7e76c8;
+        }
+        .channel-name {
+            flex-grow: 1;
+            color: #333;
+        }
+        .channel-play-indicator {
+            color: #7e76c8;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .channel-item.active .channel-play-indicator {
+            opacity: 1;
+        }
         @media (max-width: 600px) {
             .input-container {
                 flex-direction: column;
@@ -92,52 +156,13 @@
                 width: 100%;
                 line-height: 40px;
             }
-        }
-        
-        /* New styles for channel list */
-        .channel-list {
-            width: 250px;
-            position: fixed;
-            left: 20px;
-            top: 20px;
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        @media (max-width: 768px) {
-            .channel-list {
-                position: static;
+            .channel-list-container {
                 width: 80%;
-                margin: 20px auto;
-                max-height: 200px;
             }
-        }
-        .channel-item {
-            padding: 8px 12px;
-            margin: 5px 0;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .channel-item:hover {
-            background: #f0e6ff;
-        }
-        .channel-item.active {
-            background: #7e76c8;
-            color: white;
         }
     </style>
 </head>
 <body>
-    <!-- New channel list container -->
-    <div class="channel-list" id="channelList">
-        <h3>频道列表</h3>
-        <div id="channelsContainer"></div>
-    </div>
-
     <h1 class="video-title">m3u8在线播放器</h1>
     <div id="dplayer-container">
         <div id="dplayer"></div>
@@ -146,9 +171,16 @@
         <input type="text" class="url-input" placeholder="请输入m3u8视频链接">
         <div class="play-button" onclick="playVideo()">播放</div>
     </div>
+    
+    <div class="channel-list-container">
+        <div class="channel-list-header">频道列表</div>
+        <ul class="channel-list" id="channelList">
+            <!-- Channel items will be dynamically loaded here -->
+        </ul>
+    </div>
 
     <script>
-        // Original player initialization
+        // Initialize the DPlayer
         const dp = new DPlayer({
             container: document.getElementById('dplayer'),
             theme: '#E6E6FA',
@@ -165,7 +197,7 @@
             }
         });
 
-        // Original play function
+        // Function to play video from input field
         function playVideo() {
             const urlInput = document.querySelector('.url-input').value;
             if (urlInput) {
@@ -174,57 +206,74 @@
                     type: 'customHls'
                 });
                 dp.play();
-            }
-        }
-
-        // New channel list functionality
-        async function loadChannels() {
-            try {
-                const response = await fetch('/iptv.json');
-                if (!response.ok) {
-                    throw new Error('Failed to load channels');
-                }
                 
-                // Parse JSON lines format
-                const text = await response.text();
-                const channels = text.trim().split('\n').map(line => JSON.parse(line));
-                renderChannels(channels);
-            } catch (error) {
-                console.error('Error loading channels:', error);
-                document.getElementById('channelsContainer').innerHTML = 
-                    '<div>频道加载失败</div>';
+                // Remove active class from all channels
+                document.querySelectorAll('.channel-item').forEach(item => {
+                    item.classList.remove('active');
+                });
             }
         }
 
-        function renderChannels(channels) {
-            const container = document.getElementById('channelsContainer');
-            container.innerHTML = '';
+        // Function to play channel
+        function playChannel(url, channelItem) {
+            // Update input field with the selected channel URL
+            document.querySelector('.url-input').value = url;
             
-            channels.forEach(channel => {
-                const channelElement = document.createElement('div');
-                channelElement.className = 'channel-item';
-                channelElement.textContent = channel.name;
-                channelElement.onclick = () => {
-                    // Highlight selected channel
-                    document.querySelectorAll('.channel-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    channelElement.classList.add('active');
-                    
-                    // Play the channel
-                    document.querySelector('.url-input').value = channel.url;
-                    dp.switchVideo({
-                        url: channel.url,
-                        type: 'customHls'
-                    });
-                    dp.play();
-                };
-                container.appendChild(channelElement);
+            // Play the video
+            dp.switchVideo({
+                url: url,
+                type: 'customHls'
             });
+            dp.play();
+            
+            // Update active channel
+            document.querySelectorAll('.channel-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            channelItem.classList.add('active');
         }
 
-        // Load channels when page loads
-        loadChannels();
+        // Load channel list from iptv.json
+        async function loadChannelList() {
+            try {
+                const response = await fetch('iptv.json');
+                const channelData = await response.json();
+                const channelList = document.getElementById('channelList');
+                
+                // Clear existing channels
+                channelList.innerHTML = '';
+                
+                // Add channels to the list
+                channelData.forEach((channel, index) => {
+                    const channelItem = document.createElement('li');
+                    channelItem.className = 'channel-item';
+                    channelItem.innerHTML = `
+                        <svg class="channel-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                        </svg>
+                        <span class="channel-name">${channel.name}</span>
+                        <span class="channel-play-indicator">播放中</span>
+                    `;
+                    
+                    // Add click event to play the channel
+                    channelItem.addEventListener('click', () => {
+                        playChannel(channel.url, channelItem);
+                    });
+                    
+                    channelList.appendChild(channelItem);
+                });
+            } catch (error) {
+                console.error('Error loading channel list:', error);
+                document.getElementById('channelList').innerHTML = `
+                    <li class="channel-item">
+                        <span class="channel-name">加载频道列表失败，请检查iptv.json文件</span>
+                    </li>
+                `;
+            }
+        }
+
+        // Load channel list when the page loads
+        window.addEventListener('DOMContentLoaded', loadChannelList);
     </script>
 </body>
 </html>
