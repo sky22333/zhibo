@@ -25,14 +25,20 @@ jobs:
         set -e
         # 下载 IPTV 链接列表并提取符合规则的有效链接，保留频道名称
         curl -s https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt | \
-        awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' | jq -s '.' > docs/iptv.json  # 只提取以 https:// 开头并以 .m3u8 结尾的链接，[...]
+        awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' | \
+        jq -s 'map(select(.name and .url and (.url | test("^https://.*\\.m3u8$"))))' | \
+        jq -s 'if type=="array" then . else [.] end' | jq '.' > temp.json
+        mv temp.json docs/iptv.json
 
     - name: Fetch IPTV Links from Guovin
       run: |
         set -e
         # 下载 IPTV 链接列表并提取符合规则的有效链接，保留频道名称，并追加到 docs/iptv.json
         curl -s https://raw.githubusercontent.com/Guovin/iptv-api/refs/heads/gd/output/result.txt | \
-        awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' | jq -s '. + input' docs/iptv.json > temp.json && mv temp.json docs/iptv.json  # 追加数�[...]
+        awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' | \
+        jq -s 'map(select(.name and .url and (.url | test("^https://.*\\.m3u8$"))))' | \
+        jq -s 'if type=="array" then . else [.] end' | jq '.' > temp.json
+        mv temp.json docs/iptv.json
 
     - name: Commit and push changes
       env:
