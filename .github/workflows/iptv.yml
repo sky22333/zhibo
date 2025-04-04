@@ -17,31 +17,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Fetch IPTV Links from vbskycn
+    - name: Fetch IPTV Links
       run: |
         set -e
-        # 下载第一个 IPTV 链接列表并提取符合规则的有效链接，保留频道名称
+        # 下载 IPTV 链接列表并提取符合规则的有效链接，保留频道名称
         curl -s https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt | \
-        awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' > docs/iptv_vbsky.json
-        # 确保文件格式正确，包装成 JSON 数组
-        jq -s '[.[][]]' docs/iptv_vbsky.json > docs/iptv_vbsky.json.tmp
-        mv docs/iptv_vbsky.json.tmp docs/iptv_vbsky.json
-
-    - name: Fetch IPTV Links from Guovin
-      run: |
-        set -e
-        # 下载第二个 IPTV 链接列表并提取符合规则的有效链接，保留频道名称
-        curl -s https://raw.githubusercontent.com/Guovin/iptv-api/refs/heads/gd/output/result.txt | \
-        awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' > docs/iptv_guovin.json
-        # 确保文件格式正确，包装成 JSON 数组
-        jq -s '[.[][]]' docs/iptv_guovin.json > docs/iptv_guovin.json.tmp
-        mv docs/iptv_guovin.json.tmp docs/iptv_guovin.json
-
-    - name: Merge, deduplicate and update IPTV Links
-      run: |
-        set -e
-        # 合并两个 JSON 文件的内容并去重
-        jq -s '[.[][]] | unique_by(.url)' docs/iptv_vbsky.json docs/iptv_guovin.json > docs/iptv.json
+        awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' > docs/iptv.json  # 只提取以 https:// 开头并以 .m3u8 结尾的链接
 
     - name: Commit and push changes
       env:
@@ -50,5 +31,5 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add docs/iptv.json
-        git commit -m '更新IPTV链接并去重'
+        git commit -m '更新IPTV链接'
         git push
