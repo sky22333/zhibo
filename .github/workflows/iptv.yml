@@ -20,10 +20,9 @@ jobs:
     - name: Fetch IPTV Links
       run: |
         set -e
-        # 下载 IPTV 链接列表并提取有效链接
+        # 下载 IPTV 链接列表并提取符合规则的有效链接，保留频道名称
         curl -s https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt | \
-        grep -Eo 'https://[^ ]+\.m3u8' | \
-        jq -R . | jq -s . > docs/iptv.json  # 使用 jq 处理并保存为 JSON 格式
+        awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' > docs/iptv.json  # 只提取以 https:// 开头并以 .m3u8 结尾的链接
 
     - name: Commit and push changes
       env:
