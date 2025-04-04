@@ -9,7 +9,7 @@
 #### 先把需要推流的MP4视频上传到服务器
 运行脚本
 ```
-bash <(wget -qO- https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
+bash <(curl -sSL https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ```
 
 ---
