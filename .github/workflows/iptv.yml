@@ -1,4 +1,4 @@
-name: Fetch IPTV Links
+name: 定时提取IPTV链接
 
 on:
   schedule:
@@ -16,7 +16,7 @@ jobs:
     - name: Fetch IPTV Links
       run: |
         set -e
-        curl -o iptv.txt https://live.izbds.com/tv/iptv4.txt
+        curl -o iptv.txt https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt
         grep -Eo 'https://[^ ]+\.m3u8' iptv.txt > filtered_links.txt
         awk -F, '{if(NR%2==1) printf "%s,", $1; else printf "%s\n", $1}' iptv.txt | grep -F -f filtered_links.txt > docs/iptv.json
 
@@ -27,5 +27,5 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add docs/iptv.json
-        git commit -m 'Update IPTV links'
+        git commit -m '更新IPTV链接'
         git push
