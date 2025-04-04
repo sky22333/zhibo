@@ -23,10 +23,8 @@ jobs:
         # 下载第一个 IPTV 链接列表并提取符合规则的有效链接，保留频道名称
         curl -s https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt | \
         awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' > docs/iptv_vbsky.json
-        # 确保文件格式正确，包含一个有效的 JSON 数组
-        echo "[" > docs/iptv_vbsky.json.tmp
-        cat docs/iptv_vbsky.json >> docs/iptv_vbsky.json.tmp
-        echo "]" >> docs/iptv_vbsky.json.tmp
+        # 确保文件格式正确，包装成 JSON 数组
+        jq -s '[.[][]]' docs/iptv_vbsky.json > docs/iptv_vbsky.json.tmp
         mv docs/iptv_vbsky.json.tmp docs/iptv_vbsky.json
 
     - name: Fetch IPTV Links from Guovin
@@ -35,10 +33,8 @@ jobs:
         # 下载第二个 IPTV 链接列表并提取符合规则的有效链接，保留频道名称
         curl -s https://raw.githubusercontent.com/Guovin/iptv-api/refs/heads/gd/output/result.txt | \
         awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' > docs/iptv_guovin.json
-        # 确保文件格式正确，包含一个有效的 JSON 数组
-        echo "[" > docs/iptv_guovin.json.tmp
-        cat docs/iptv_guovin.json >> docs/iptv_guovin.json.tmp
-        echo "]" >> docs/iptv_guovin.json.tmp
+        # 确保文件格式正确，包装成 JSON 数组
+        jq -s '[.[][]]' docs/iptv_guovin.json > docs/iptv_guovin.json.tmp
         mv docs/iptv_guovin.json.tmp docs/iptv_guovin.json
 
     - name: Merge, deduplicate and update IPTV Links
