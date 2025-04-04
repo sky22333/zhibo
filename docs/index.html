@@ -166,8 +166,8 @@
             .channel-list-container {
                 width: 100%;
                 margin-right: 0;
-                margin-top: 20px;
-                height: 320px;
+                margin-top: 30px;  /* Increased spacing between player and list */
+                height: 240px;     /* Shorter list for mobile */
                 min-width: unset;
             }
             .player-section {
@@ -192,6 +192,38 @@
                 line-height: 40px;
             }
         }
+        
+        /* Volume control styles */
+        .volume-control {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .volume-slider {
+            flex-grow: 1;
+            height: 5px;
+            -webkit-appearance: none;
+            background: #d3d3d3;
+            outline: none;
+            border-radius: 5px;
+        }
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #7e76c8;
+            cursor: pointer;
+        }
+        .volume-slider::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #7e76c8;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -211,6 +243,9 @@
             <div class="input-container">
                 <input type="text" class="url-input" placeholder="请输入m3u8视频链接">
                 <div class="play-button" onclick="playVideo()">播放</div>
+            </div>
+            <div class="volume-control">
+                <input type="range" min="0" max="1" step="0.01" class="volume-slider" id="volume-slider">
             </div>
         </div>
     </div>
@@ -309,6 +344,36 @@
                 `;
             }
         }
+
+        // Volume control
+        const volumeSlider = document.getElementById('volume-slider');
+        volumeSlider.addEventListener('input', (event) => {
+            const volume = parseFloat(event.target.value);
+            dp.volume(volume);
+        });
+        volumeSlider.value = dp.volume();
+
+        // Fullscreen orientation control for mobile
+        const playerContainer = document.getElementById('dplayer-container');
+        dp.on('fullscreen', () => {
+            if (window.screen.orientation && window.screen.orientation.lock) {
+                window.screen.orientation.lock('landscape')
+                .then(() => {
+                    console.log('屏幕已锁定为横向模式');
+                })
+                .catch((error) => {
+                    console.warn('无法锁定屏幕方向，请手动旋转设备:', error);
+                });
+            } else {
+                console.warn('当前浏览器不支持锁定屏幕方向，请手动旋转设备。');
+            }
+        });
+
+        dp.on('fullscreen_cancel', () => {
+            if (window.screen.orientation && window.screen.orientation.unlock) {
+                window.screen.orientation.unlock();
+            }
+        });
 
         // Load channel list when the page loads
         window.addEventListener('DOMContentLoaded', loadChannelList);
