@@ -2,12 +2,12 @@ name: 定时提取IPTV链接
 
 on:
   schedule:
-    - cron: '0 19 * * *'  # 每天19点UTC（北京时间为凌晨3点）
+    - cron: '0 19 */3 * *'  # 每三天19点UTC（北京时间为凌晨3点）
   workflow_dispatch:
 
 permissions:
-  contents: write  # 允许 GitHub Actions 对仓库内容进行写入操作
-  pull-requests: write  # 如果需要修改 pull requests，也可以加上这个权限
+  contents: write
+  pull-requests: write
 
 jobs:
   fetch-iptv-links:
@@ -20,20 +20,20 @@ jobs:
     - name: Install jq
       run: sudo apt-get install jq
 
-    - name: Fetch IPTV Links from vbskycn
+    - name: 获取vbskycn/iptv库
       run: |
         set -e
-        # 下载 IPTV 链接列表并提取符合规则的有效链接，保留频道名称
+        # 下载 IPTV 链接列表并提取符合规则的有效链接
         curl -s https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt | \
         awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' | \
         jq -s 'map(select(.name and .url and (.url | test("^https://.*\\.m3u8$"))))' | \
         jq -s 'if type=="array" then . else [.] end' | jq '.' > temp.json
         mv temp.json docs/iptv.json
 
-    - name: Fetch IPTV Links from Guovin
+    - name: 获取Guovin/iptv-api库
       run: |
         set -e
-        # 下载 IPTV 链接列表并提取符合规则的有效链接，保留频道名称，并追加到 docs/iptv.json
+        # 下载 IPTV 链接列表并提取符合规则的有效链接，并追加到 docs/iptv.json
         curl -s https://raw.githubusercontent.com/Guovin/iptv-api/refs/heads/gd/output/result.txt | \
         awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' | \
         jq -s 'map(select(.name and .url and (.url | test("^https://.*\\.m3u8$"))))' | \
