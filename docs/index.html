@@ -12,98 +12,33 @@
         body {
             background: rgb(247, 247, 250);
             margin: 0;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .header {
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        .video-title {
-            color: #430f6b;
-            font-size: 1.5em;
-            margin: 0;
-        }
-
-        .main-container {
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            padding: 0 20px;
-            gap: 20px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .main-container {
-                flex-direction: column;
-                padding: 0 10px;
-            }
-        }
-
-        .channel-list {
-            width: 250px;
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
-            max-height: 70vh;
-        }
-
-        @media screen and (max-width: 768px) {
-            .channel-list {
-                width: 100%;
-                max-height: 200px;
-                order: 3;
-                margin-top: 15px;
-            }
-        }
-
-        .channel-list h2 {
-            color: #430f6b;
-            font-size: 1.2em;
-            margin-top: 0;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .channel-item {
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .channel-item:hover {
-            background: #f0e6ff;
-        }
-
-        .channel-item.active {
-            background: #7e76c8;
-            color: white;
-        }
-
-        .player-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
-
+        .video-title {
+            font-family: 'Arial', sans-serif;
+            color: #430f6b;
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
         #dplayer-container {
-            width: 100%;
+            width: 70%;
             max-width: 100%;
             height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 10px;
         }
-
+        @media screen and (max-width: 768px) {
+            #dplayer-container {
+                width: 100%;
+            }
+        }
         #dplayer {
             width: 100%;
             border-radius: 10px;
@@ -111,16 +46,13 @@
             border: 2px solid black;
             box-shadow: 0 0 15px 10px rgba(255, 255, 255, 0.5);
         }
-
         .input-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 15px;
-            width: 100%;
-            max-width: 800px;
+            margin-top: 10px;
+            width: 60%;
         }
-
         .url-input {
             flex-grow: 1;
             padding: 10px;
@@ -129,7 +61,6 @@
             margin-right: 10px;
             font-size: 16px;
         }
-
         .play-button {
             width: 100px;
             height: 40px;
@@ -143,16 +74,15 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .play-button:hover {
             background: linear-gradient(to right, #7e76c8, #b19cd9);
             border-color: #b19cd9;
         }
-
         @media (max-width: 600px) {
             .input-container {
                 flex-direction: column;
                 align-items: stretch;
+                width: 80%;
             }
             .url-input {
                 margin-bottom: 10px;
@@ -163,48 +93,62 @@
                 line-height: 40px;
             }
         }
-
-        .loading {
-            text-align: center;
-            padding: 10px;
-            color: #7e76c8;
+        
+        /* New styles for channel list */
+        .channel-list {
+            width: 250px;
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-height: 80vh;
+            overflow-y: auto;
         }
-
-        .channel-search {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
+        @media (max-width: 768px) {
+            .channel-list {
+                position: static;
+                width: 80%;
+                margin: 20px auto;
+                max-height: 200px;
+            }
+        }
+        .channel-item {
+            padding: 8px 12px;
+            margin: 5px 0;
             border-radius: 5px;
-            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .channel-item:hover {
+            background: #f0e6ff;
+        }
+        .channel-item.active {
+            background: #7e76c8;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1 class="video-title">m3u8在线播放器</h1>
+    <!-- New channel list container -->
+    <div class="channel-list" id="channelList">
+        <h3>频道列表</h3>
+        <div id="channelsContainer"></div>
     </div>
-    
-    <div class="main-container">
-        <div class="channel-list">
-            <h2>频道列表</h2>
-            <input type="text" class="channel-search" placeholder="搜索频道..." oninput="filterChannels()">
-            <div id="channel-list-container"></div>
-            <div class="loading" id="loading">加载中...</div>
-        </div>
-        
-        <div class="player-container">
-            <div id="dplayer-container">
-                <div id="dplayer"></div>
-            </div>
-            <div class="input-container">
-                <input type="text" class="url-input" placeholder="请输入m3u8视频链接">
-                <div class="play-button" onclick="playVideo()">播放</div>
-            </div>
-        </div>
+
+    <h1 class="video-title">m3u8在线播放器</h1>
+    <div id="dplayer-container">
+        <div id="dplayer"></div>
+    </div>
+    <div class="input-container">
+        <input type="text" class="url-input" placeholder="请输入m3u8视频链接">
+        <div class="play-button" onclick="playVideo()">播放</div>
     </div>
 
     <script>
+        // Original player initialization
         const dp = new DPlayer({
             container: document.getElementById('dplayer'),
             theme: '#E6E6FA',
@@ -221,113 +165,7 @@
             }
         });
 
-        let channels = [];
-        let displayedChannels = 10;
-        const channelListContainer = document.getElementById('channel-list-container');
-        const loadingElement = document.getElementById('loading');
-
-        // Fetch channels from JSON
-        async function fetchChannels() {
-            try {
-                const response = await fetch('/iptv.json');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                
-                const text = await response.text();
-                // Parse as JSON lines
-                channels = text.trim().split('\n').map(line => JSON.parse(line));
-                renderChannels();
-            } catch (error) {
-                console.error('Error fetching channels:', error);
-                loadingElement.textContent = '加载频道失败';
-            }
-        }
-
-        // Render channels with infinite scroll
-        function renderChannels() {
-            channelListContainer.innerHTML = '';
-            const channelsToShow = channels.slice(0, displayedChannels);
-            
-            if (channelsToShow.length === 0) {
-                channelListContainer.innerHTML = '<div class="channel-item">没有找到频道</div>';
-                return;
-            }
-            
-            channelsToShow.forEach((channel, index) => {
-                const channelElement = document.createElement('div');
-                channelElement.className = 'channel-item';
-                channelElement.textContent = channel.name;
-                channelElement.onclick = () => {
-                    // Remove active class from all channels
-                    document.querySelectorAll('.channel-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    // Add active class to clicked channel
-                    channelElement.classList.add('active');
-                    // Play the channel
-                    playChannel(channel.url);
-                };
-                channelListContainer.appendChild(channelElement);
-            });
-            
-            if (displayedChannels >= channels.length) {
-                loadingElement.style.display = 'none';
-            } else {
-                loadingElement.style.display = 'block';
-            }
-        }
-
-        // Filter channels based on search input
-        function filterChannels() {
-            const searchInput = document.querySelector('.channel-search').value.toLowerCase();
-            displayedChannels = 10; // Reset displayed channels count
-            
-            if (searchInput === '') {
-                renderChannels();
-                return;
-            }
-            
-            const filteredChannels = channels.filter(channel => 
-                channel.name.toLowerCase().includes(searchInput)
-                .slice(0, displayedChannels);
-            
-            channelListContainer.innerHTML = '';
-            
-            if (filteredChannels.length === 0) {
-                channelListContainer.innerHTML = '<div class="channel-item">没有找到匹配的频道</div>';
-                loadingElement.style.display = 'none';
-                return;
-            }
-            
-            filteredChannels.forEach(channel => {
-                const channelElement = document.createElement('div');
-                channelElement.className = 'channel-item';
-                channelElement.textContent = channel.name;
-                channelElement.onclick = () => {
-                    document.querySelectorAll('.channel-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    channelElement.classList.add('active');
-                    playChannel(channel.url);
-                };
-                channelListContainer.appendChild(channelElement);
-            });
-            
-            loadingElement.style.display = 'none';
-        }
-
-        // Play channel URL
-        function playChannel(url) {
-            document.querySelector('.url-input').value = url;
-            dp.switchVideo({
-                url: url,
-                type: 'customHls'
-            });
-            dp.play();
-        }
-
-        // Play video from input
+        // Original play function
         function playVideo() {
             const urlInput = document.querySelector('.url-input').value;
             if (urlInput) {
@@ -339,18 +177,54 @@
             }
         }
 
-        // Infinite scroll
-        channelListContainer.addEventListener('scroll', () => {
-            if (channelListContainer.scrollTop + channelListContainer.clientHeight >= channelListContainer.scrollHeight - 20) {
-                if (displayedChannels < channels.length) {
-                    displayedChannels += 10;
-                    renderChannels();
+        // New channel list functionality
+        async function loadChannels() {
+            try {
+                const response = await fetch('/iptv.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load channels');
                 }
+                
+                // Parse JSON lines format
+                const text = await response.text();
+                const channels = text.trim().split('\n').map(line => JSON.parse(line));
+                renderChannels(channels);
+            } catch (error) {
+                console.error('Error loading channels:', error);
+                document.getElementById('channelsContainer').innerHTML = 
+                    '<div>频道加载失败</div>';
             }
-        });
+        }
 
-        // Initialize
-        fetchChannels();
+        function renderChannels(channels) {
+            const container = document.getElementById('channelsContainer');
+            container.innerHTML = '';
+            
+            channels.forEach(channel => {
+                const channelElement = document.createElement('div');
+                channelElement.className = 'channel-item';
+                channelElement.textContent = channel.name;
+                channelElement.onclick = () => {
+                    // Highlight selected channel
+                    document.querySelectorAll('.channel-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    channelElement.classList.add('active');
+                    
+                    // Play the channel
+                    document.querySelector('.url-input').value = channel.url;
+                    dp.switchVideo({
+                        url: channel.url,
+                        type: 'customHls'
+                    });
+                    dp.play();
+                };
+                container.appendChild(channelElement);
+            });
+        }
+
+        // Load channels when page loads
+        loadChannels();
     </script>
 </body>
 </html>
