@@ -17,12 +17,19 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Fetch IPTV Links
+    - name: Fetch IPTV Links from vbskycn
       run: |
         set -e
         # 下载 IPTV 链接列表并提取符合规则的有效链接，保留频道名称
         curl -s https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/hd.txt | \
         awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' > docs/iptv.json  # 只提取以 https:// 开头并以 .m3u8 结尾的链接
+
+    - name: Fetch IPTV Links from Guovin
+      run: |
+        set -e
+        # 下载 IPTV 链接列表并提取符合规则的有效链接，保留频道名称，并追加到 docs/iptv.json
+        curl -s https://raw.githubusercontent.com/Guovin/iptv-api/refs/heads/gd/output/result.txt | \
+        awk -F ',' '{if ($2 ~ /^https:\/\/.*\.m3u8$/) print "{\"name\":\"" $1 "\",\"url\":\"" $2 "\"}"}' >> docs/iptv.json  # 追加数据
 
     - name: Commit and push changes
       env:
