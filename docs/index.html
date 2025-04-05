@@ -113,8 +113,13 @@
             padding: 0;
             margin: 0;
             list-style-type: none;
-            overflow-y: auto;
+            overflow-y: hidden; /* 隐藏频道列表滑动条 */
             flex-grow: 1;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .channel-list::-webkit-scrollbar {
+            display: none; /* 对于 Chrome, Safari 和 Opera */
         }
         .channel-item {
             padding: 12px 15px;
