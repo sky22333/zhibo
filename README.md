@@ -98,5 +98,5 @@ nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v libx264 -preset medium
 ---
 
 
-#### 直播源搜索：
+#### TV直播源：
 - https://iptv-org.github.io
