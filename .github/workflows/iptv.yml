@@ -2,7 +2,7 @@ name: 定时提取IPTV链接
 
 on:
   schedule:
-    - cron: '0 19 */3 * *'  # 每三天19点UTC（北京时间为凌晨3点）
+    - cron: '0 19 */3 * *'  # 每隔三天执行一次
   workflow_dispatch:
 
 permissions:
