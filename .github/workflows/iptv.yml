@@ -47,5 +47,5 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add docs/iptv.json
-        git commit -m '更新IPTV链接'
+        git commit -m '✅更新TV源'
         git push
