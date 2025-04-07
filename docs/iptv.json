@@ -106,18 +106,6 @@
     },
     {
       "name": "嘉兴新闻综合",
-      "url": "https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8"
-    },
-    {
-      "name": "嘉兴新闻综合",
-      "url": "https://live-auth.51kandianshi.com/szgd/csztv1.m3u8"
-    },
-    {
-      "name": "嘉兴新闻综合",
-      "url": "https://cm-live.ntjoy.com/live/4f1.m3u8"
-    },
-    {
-      "name": "嘉兴新闻综合",
       "url": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8"
     },
     {
@@ -126,7 +114,15 @@
     },
     {
       "name": "嘉兴新闻综合",
-      "url": "https://qcfile.qcrmt.com/nmip-media/channellive/channel100933/playlist.m3u8"
+      "url": "https://live-auth.51kandianshi.com/szgd/csztv1.m3u8"
+    },
+    {
+      "name": "嘉兴新闻综合",
+      "url": "https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8"
+    },
+    {
+      "name": "嘉兴新闻综合",
+      "url": "https://cm-live.ntjoy.com/live/4f1.m3u8"
     },
     {
       "name": "浙江经视",
@@ -222,7 +218,11 @@
     },
     {
       "name": "新闻综合",
-      "url": "https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8"
+      "url": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8"
+    },
+    {
+      "name": "新闻综合",
+      "url": "https://live.pzhkai.com/xwzhtl/sd/live.m3u8"
     },
     {
       "name": "新闻综合",
@@ -230,15 +230,11 @@
     },
     {
       "name": "新闻综合",
+      "url": "https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8"
+    },
+    {
+      "name": "新闻综合",
       "url": "https://cm-live.ntjoy.com/live/4f1.m3u8"
-    },
-    {
-      "name": "新闻综合",
-      "url": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8"
-    },
-    {
-      "name": "新闻综合",
-      "url": "https://live.pzhkai.com/xwzhtl/sd/live.m3u8"
     },
     {
       "name": "新闻综合",
@@ -457,10 +453,6 @@
       "url": "https://file.ysxtv.cn/nmip-media/channellive/channel101492/playlist.m3u8"
     },
     {
-      "name": "荥经综合",
-      "url": "https://m3u8channel-yj.yunxya.com/nmip-media/channellive/channel101140/playlist.m3u8"
-    },
-    {
       "name": "营山电视台",
       "url": "https://file.ysxtv.cn/nmip-media/channellive/channel101492/playlist.m3u8"
     },
@@ -505,10 +497,6 @@
       "url": "https://satellitepull.cnr.cn/live/wxhainxwgb/playlist.m3u8"
     },
     {
-      "name": "项城新闻",
-      "url": "https://play-hsbj.vzan.com/978354/446938712125478466/live.m3u8?zbid=978354&tpid=1651937429#@http://tvpull.dxhmt.cn:9081/tv/11681-1.m3u8#@http://live.dxhmt.cn:9081/tv/11681-1.m3u8"
-    },
-    {
       "name": "洛阳综合",
       "url": "https://wshlslive.migucloud.com/live/6AL7GTQX_C0/playlist.m3u8"
     },
@@ -531,6 +519,10 @@
     {
       "name": "河北农民",
       "url": "https://ls.qingting.fm/live/1650/64k.m3u8"
+    },
+    {
+      "name": "河北农民",
+      "url": "https://radio.pull.hebtv.com/live/hebnczx.m3u8"
     },
     {
       "name": "任丘文娱",
@@ -745,20 +737,8 @@
       "url": "https://satellitepull.cnr.cn/live/wxnxjjgb/playlist.m3u8"
     },
     {
-      "name": "延边卫视",
-      "url": "https://live.ybtvyun.com/video/s10006-2f92b9e0b123/index.m3u8"
-    },
-    {
       "name": "吉林乡村",
       "url": "https://satellitepull.cnr.cn/live/wxjlxcgb/playlist.m3u8"
-    },
-    {
-      "name": "延边-1",
-      "url": "https://live.ybtvyun.com/video/s10006-9ccd00054351/index.m3u8"
-    },
-    {
-      "name": "延边-2",
-      "url": "https://live.ybtvyun.com/video/s10006-1c8f0ebfee9f/index.m3u8"
     },
     {
       "name": "内蒙经济",
