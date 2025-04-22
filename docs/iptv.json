@@ -7,6 +7,14 @@
     {
       "name": "济南新闻综合",
       "url": "https://lives.jnnews.tv/video/s10001-JNTV3/index.m3u8"
+    },
+    {
+      "name": "无线新闻",
+      "url": "https://edge2a.v2h-cdn.com/news/news.stream/chunklist.m3u8"
+    },
+    {
+      "name": "西游记",
+      "url": "https://txmov2.a.kwimgs.com/bs3/video-hls/5239093806671579134_hlsb.m3u8"
     }
   ]
 ]
