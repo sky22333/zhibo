@@ -1,7 +1,7 @@
 [
   [
     {
-      "name": "2025-05-13 18:21:25",
+      "name": "2025-05-16 18:20:15",
       "url": "https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8"
     },
     {
@@ -81,16 +81,24 @@
       "url": "https://stream1.freetv.fun/5f12b986a77ebe5440c508c13895b3e7f8767b2a47c79f3f5fe948097e15337d.m3u8"
     },
     {
+      "name": "广东珠江",
+      "url": "https://tv.cdn.com.mp/live/gdzj/stream.m3u8"
+    },
+    {
       "name": "广东体育",
       "url": "https://epg.pw/stream/7b470f9fc5c305db0c8622117b7b25ca00eb35ba3e93e865cf0ff9df5c736681.m3u8"
     },
     {
       "name": "广东体育",
-      "url": "https://stream1.freetv.fun/869475cf6ab5d187816a1b7fbd8649cfc0b41c452e5595eabb2a36e51a61eecf.m3u8"
+      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-20.m3u8"
     },
     {
       "name": "广东体育",
-      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-16.m3u8"
+      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-3.m3u8"
+    },
+    {
+      "name": "广东体育",
+      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-30.m3u8"
     },
     {
       "name": "广东新闻",
@@ -98,19 +106,11 @@
     },
     {
       "name": "广东新闻",
-      "url": "https://stream1.freetv.fun/yan-dong-xin-wen-20.m3u8"
+      "url": "https://stream1.freetv.fun/yan-dong-xin-wen-2.m3u8"
     },
     {
       "name": "广东新闻",
-      "url": "https://stream1.freetv.fun/yan-dong-xin-wen-25.m3u8"
-    },
-    {
-      "name": "广东新闻",
-      "url": "https://stream1.freetv.fun/yan-dong-xin-wen-10.m3u8"
-    },
-    {
-      "name": "广东新闻",
-      "url": "https://stream1.freetv.fun/yan-dong-xin-wen-16.m3u8"
+      "url": "https://stream1.freetv.fun/yan-dong-xin-wen-22.m3u8"
     },
     {
       "name": "广东民生",
@@ -125,20 +125,20 @@
       "url": "https://stream1.freetv.fun/yan-dong-min-sheng-9.m3u8"
     },
     {
-      "name": "大湾区卫视",
-      "url": "https://stream1.freetv.fun/9e44565ab6186689007a295d8b94b2a970fafde637068b0e3837e5f84689a8f3.m3u8"
-    },
-    {
-      "name": "广州竞赛",
-      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-2.m3u8"
-    },
-    {
-      "name": "广州竞赛",
-      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-15.m3u8"
-    },
-    {
       "name": "广州竞赛",
       "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-8.m3u8"
+    },
+    {
+      "name": "广州竞赛",
+      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-1.m3u8"
+    },
+    {
+      "name": "广州竞赛",
+      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-3.m3u8"
+    },
+    {
+      "name": "广州竞赛",
+      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-4.m3u8"
     },
     {
       "name": "浙江钱江",
@@ -249,6 +249,10 @@
       "url": "https://stream1.freetv.fun/zhe-jiang-guo-ji-10.m3u8"
     },
     {
+      "name": "浙江国际",
+      "url": "https://stream1.freetv.fun/zhe-jiang-guo-ji-9.m3u8"
+    },
+    {
       "name": "嘉兴新闻综合",
       "url": "https://live-auth.51kandianshi.com/szgd/csztv1.m3u8"
     },
@@ -278,23 +282,15 @@
     },
     {
       "name": "浙江民生休闲",
-      "url": "https://stream1.freetv.fun/zhe-jiang-min-sheng-2.m3u8"
-    },
-    {
-      "name": "浙江民生休闲",
-      "url": "https://stream1.freetv.fun/zhe-jiang-min-sheng-6.m3u8"
-    },
-    {
-      "name": "浙江民生休闲",
-      "url": "https://stream1.freetv.fun/zhe-jiang-min-sheng-xiu-xian-4.m3u8"
-    },
-    {
-      "name": "浙江民生休闲",
       "url": "https://stream1.freetv.fun/zhe-jiang-min-sheng-5.m3u8"
     },
     {
       "name": "浙江民生休闲",
       "url": "https://stream1.freetv.fun/zhe-jiang-min-sheng-9.m3u8"
+    },
+    {
+      "name": "浙江民生休闲",
+      "url": "https://stream1.freetv.fun/zhe-jiang-min-sheng-1.m3u8"
     },
     {
       "name": "浙江教科影视",
@@ -541,6 +537,10 @@
       "url": "https://ls.qingting.fm/live/339/64k.m3u8"
     },
     {
+      "name": "北京新闻",
+      "url": "https://brtv-radiolive.rbc.cn/alive/fm945.m3u8"
+    },
+    {
       "name": "上海第一财经",
       "url": "https://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8"
     },
@@ -590,10 +590,6 @@
     },
     {
       "name": "东方影视",
-      "url": "https://stream1.freetv.fun/ipv6-dong-fang-ying-shi-9.m3u8"
-    },
-    {
-      "name": "东方影视",
       "url": "https://stream1.freetv.fun/ipv6-dong-fang-ying-shi-3.m3u8"
     },
     {
@@ -601,8 +597,8 @@
       "url": "https://stream1.freetv.fun/ipv6-dong-fang-ying-shi-5.m3u8"
     },
     {
-      "name": "动漫秀场",
-      "url": "https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-11.m3u8"
+      "name": "东方影视",
+      "url": "https://stream1.freetv.fun/dong-fang-ying-shi-13.m3u8"
     },
     {
       "name": "动漫秀场",
@@ -615,6 +611,14 @@
     {
       "name": "动漫秀场",
       "url": "https://stream1.freetv.fun/c1a9c0728c4a8d7636c7de8d4f69f3abdc906231ea7f7e72d59433843738617f.m3u8"
+    },
+    {
+      "name": "动漫秀场",
+      "url": "https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-9.m3u8"
+    },
+    {
+      "name": "动漫秀场",
+      "url": "https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-2.m3u8"
     },
     {
       "name": "哈哈炫动",
@@ -633,12 +637,12 @@
       "url": "https://stream1.freetv.fun/ipv6-ha-ha-xuan-dong-10.m3u8"
     },
     {
-      "name": "新闻综合",
-      "url": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8"
+      "name": "嘉定电视台",
+      "url": "https://pili-live-hls.wdit.com.cn/wditlive/15472c98517744b994e85c9c60cc93cf6a3b.m3u8?zshangd#https://pili-live-hls.wdit.com.cn/wditlive/15472c98517744b994e85c9c60cc93cf6a3b.m3u8"
     },
     {
       "name": "新闻综合",
-      "url": "https://stream1.freetv.fun/shang-hai-xin-wen-zong-he-1.m3u8"
+      "url": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8"
     },
     {
       "name": "生活时尚",
@@ -663,6 +667,14 @@
     {
       "name": "生活时尚",
       "url": "https://stream1.freetv.fun/sheng-huo-shi-shang-11.m3u8"
+    },
+    {
+      "name": "生活时尚",
+      "url": "https://stream1.freetv.fun/ipv6-sheng-huo-shi-shang-2.m3u8"
+    },
+    {
+      "name": "生活时尚",
+      "url": "https://stream1.freetv.fun/ipv6-sheng-huo-shi-shang-7.m3u8"
     },
     {
       "name": "重庆新闻",
@@ -754,10 +766,6 @@
     },
     {
       "name": "靖江新闻综合",
-      "url": "https://satellitepull.cnr.cn/live/wxlnjjtb/playlist.m3u8"
-    },
-    {
-      "name": "靖江新闻综合",
       "url": "https://stream1.freetv.fun/jing-jiang-xin-wen-zong-he-1.m3u8"
     },
     {
@@ -806,31 +814,19 @@
     },
     {
       "name": "湖南都市",
-      "url": "https://stream1.freetv.fun/hu-nan-du-shi-15.m3u8"
-    },
-    {
-      "name": "湖南都市",
-      "url": "https://stream1.freetv.fun/hu-nan-du-shi-13.m3u8"
-    },
-    {
-      "name": "湖南都市",
-      "url": "https://stream1.freetv.fun/hu-nan-du-shi-gao-qing-3.m3u8"
-    },
-    {
-      "name": "湖南都市",
-      "url": "https://stream1.freetv.fun/hu-nan-du-shi-11.m3u8"
-    },
-    {
-      "name": "湖南都市",
-      "url": "https://stream1.freetv.fun/hu-nan-du-shi-gao-qing-1.m3u8"
-    },
-    {
-      "name": "湖南都市",
-      "url": "https://stream1.freetv.fun/hu-nan-du-shi-9.m3u8"
-    },
-    {
-      "name": "湖南都市",
       "url": "https://stream1.freetv.fun/hu-nan-du-shi-8.m3u8"
+    },
+    {
+      "name": "湖南都市",
+      "url": "https://stream1.freetv.fun/hu-nan-du-shi-14.m3u8"
+    },
+    {
+      "name": "湖南都市",
+      "url": "https://stream1.freetv.fun/hu-nan-du-shi-1.m3u8"
+    },
+    {
+      "name": "湖南都市",
+      "url": "https://stream1.freetv.fun/hu-nan-du-shi-3.m3u8"
     },
     {
       "name": "湖南经视",
@@ -946,30 +942,6 @@
     },
     {
       "name": "湖南娱乐",
-      "url": "https://stream1.freetv.fun/hu-nan-yu-le-4.m3u8"
-    },
-    {
-      "name": "湖南娱乐",
-      "url": "https://stream1.freetv.fun/hu-nan-yu-le-12.m3u8"
-    },
-    {
-      "name": "湖南娱乐",
-      "url": "https://stream1.freetv.fun/hu-nan-yu-le-6.m3u8"
-    },
-    {
-      "name": "湖南娱乐",
-      "url": "https://stream1.freetv.fun/hu-nan-yu-le-14.m3u8"
-    },
-    {
-      "name": "湖南娱乐",
-      "url": "https://stream1.freetv.fun/hu-nan-yu-le-3.m3u8"
-    },
-    {
-      "name": "湖南娱乐",
-      "url": "https://stream1.freetv.fun/hu-nan-yu-le-15.m3u8"
-    },
-    {
-      "name": "湖南娱乐",
       "url": "https://stream1.freetv.fun/hu-nan-yu-le-13.m3u8"
     },
     {
@@ -977,8 +949,24 @@
       "url": "https://stream1.freetv.fun/hu-nan-yu-le-16.m3u8"
     },
     {
-      "name": "湖南国际",
-      "url": "https://stream1.freetv.fun/hu-nan-guo-ji-1.m3u8"
+      "name": "湖南娱乐",
+      "url": "https://stream1.freetv.fun/hu-nan-yu-le-8.m3u8"
+    },
+    {
+      "name": "湖南娱乐",
+      "url": "https://stream1.freetv.fun/hu-nan-yu-le-9.m3u8"
+    },
+    {
+      "name": "湖南娱乐",
+      "url": "https://stream1.freetv.fun/hu-nan-yu-le-gao-qing-3.m3u8"
+    },
+    {
+      "name": "湖南娱乐",
+      "url": "https://stream1.freetv.fun/hu-nan-yu-le-2.m3u8"
+    },
+    {
+      "name": "湖南娱乐",
+      "url": "https://stream1.freetv.fun/hu-nan-yu-le-7.m3u8"
     },
     {
       "name": "湖南国际",
@@ -1142,26 +1130,6 @@
     },
     {
       "name": "湖北影视",
-      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-12.m3u8"
-    },
-    {
-      "name": "湖北影视",
-      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-11.m3u8"
-    },
-    {
-      "name": "湖北影视",
-      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-6.m3u8"
-    },
-    {
-      "name": "湖北影视",
-      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-3.m3u8"
-    },
-    {
-      "name": "湖北影视",
-      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-13.m3u8"
-    },
-    {
-      "name": "湖北影视",
       "url": "https://stream1.freetv.fun/hu-bei-ying-shi-16.m3u8"
     },
     {
@@ -1169,40 +1137,32 @@
       "url": "https://stream1.freetv.fun/hu-bei-ying-shi-4.m3u8"
     },
     {
-      "name": "湖北公共",
-      "url": "https://stream1.freetv.fun/hu-bei-gong-gong-4.m3u8"
+      "name": "湖北影视",
+      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-1.m3u8"
     },
     {
-      "name": "湖北公共",
-      "url": "https://stream1.freetv.fun/hu-bei-gong-gong-10.m3u8"
+      "name": "湖北影视",
+      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-15.m3u8"
     },
     {
-      "name": "湖北公共",
-      "url": "https://stream1.freetv.fun/hu-bei-gong-gong-13.m3u8"
+      "name": "湖北影视",
+      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-10.m3u8"
     },
     {
-      "name": "湖北公共",
-      "url": "https://stream1.freetv.fun/hu-bei-gong-gong-xin-wen-4.m3u8"
+      "name": "湖北影视",
+      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-9.m3u8"
     },
     {
-      "name": "湖北公共",
-      "url": "https://stream1.freetv.fun/hu-bei-gong-gong-3.m3u8"
-    },
-    {
-      "name": "湖北公共",
-      "url": "https://stream1.freetv.fun/hu-bei-gong-gong-7.m3u8"
+      "name": "湖北影视",
+      "url": "https://stream1.freetv.fun/hu-bei-ying-shi-2.m3u8"
     },
     {
       "name": "湖北公共",
       "url": "https://stream1.freetv.fun/hu-bei-gong-gong-2.m3u8"
     },
     {
-      "name": "湖北垄上",
-      "url": "https://stream1.freetv.fun/hu-bei-long-shang-11.m3u8"
-    },
-    {
-      "name": "湖北垄上",
-      "url": "https://stream1.freetv.fun/hu-bei-long-shang-8.m3u8"
+      "name": "湖北公共",
+      "url": "https://stream1.freetv.fun/hu-bei-gong-gong-9.m3u8"
     },
     {
       "name": "湖北垄上",
@@ -1219,6 +1179,14 @@
     {
       "name": "湖北垄上",
       "url": "https://stream1.freetv.fun/hu-bei-long-shang-17.m3u8"
+    },
+    {
+      "name": "湖北垄上",
+      "url": "https://stream1.freetv.fun/hu-bei-long-shang-13.m3u8"
+    },
+    {
+      "name": "湖北垄上",
+      "url": "https://stream1.freetv.fun/hu-bei-long-shang-14.m3u8"
     },
     {
       "name": "武汉一台新闻综合",
@@ -1327,6 +1295,10 @@
     {
       "name": "荆门新闻综合",
       "url": "https://stream1.freetv.fun/jing-men-xin-wen-zong-he-4.m3u8"
+    },
+    {
+      "name": "北海新闻综合",
+      "url": "https://live.gxrb.com.cn/gx/beihai/index.m3u8"
     },
     {
       "name": "北海经济科教",
@@ -1754,19 +1726,11 @@
     },
     {
       "name": "邢台综合",
-      "url": "https://stream1.freetv.fun/xing-tai-zong-he-17.m3u8"
+      "url": "https://stream1.freetv.fun/xing-tai-zong-he-8.m3u8"
     },
     {
       "name": "邢台综合",
-      "url": "https://stream1.freetv.fun/xing-tai-zong-he-2.m3u8"
-    },
-    {
-      "name": "邢台综合",
-      "url": "https://stream1.freetv.fun/xing-tai-zong-he-4.m3u8"
-    },
-    {
-      "name": "邢台综合",
-      "url": "https://stream1.freetv.fun/xing-tai-zong-he-6.m3u8"
+      "url": "https://stream1.freetv.fun/xing-tai-zong-he-9.m3u8"
     },
     {
       "name": "石家庄都市",
@@ -1891,10 +1855,6 @@
     {
       "name": "甘肃都市",
       "url": "https://hls.gstv.com.cn/49048r/l54391.m3u8"
-    },
-    {
-      "name": "嘉峪关综合",
-      "url": "https://play.kankanlive.com/live/1656487214793905.m3u8"
     },
     {
       "name": "成县综合",
@@ -2123,10 +2083,6 @@
     {
       "name": "运城科技教育",
       "url": "https://stream1.freetv.fun/yun-cheng-ke-ji-jiao-yu-2.m3u8"
-    },
-    {
-      "name": "安徽经济生活",
-      "url": "https://stream1.freetv.fun/an-hui-jing-ji-sheng-huo-2.m3u8"
     },
     {
       "name": "安徽经济生活",
@@ -2369,8 +2325,8 @@
       "url": "https://stream.hrbtv.net/yspd/sd/live.m3u8"
     },
     {
-      "name": "哈尔滨娱乐",
-      "url": "https://stream.hrbtv.net/ylpd/sd/live.m3u8"
+      "name": "哈尔滨生活",
+      "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
     },
     {
       "name": "大庆新闻综合",
@@ -2386,11 +2342,11 @@
     },
     {
       "name": "凤凰中文",
-      "url": "https://stream1.freetv.fun/feng-huang-zhong-wen-19.m3u8"
+      "url": "https://stream1.freetv.fun/91dffd2dca60b65821a94747f2f3020dfc9642bb89f86ed7fa6d8b0b7487c5d2.m3u8"
     },
     {
       "name": "凤凰中文",
-      "url": "https://stream1.freetv.fun/feng-huang-zhong-wen-9.m3u8"
+      "url": "https://stream1.freetv.fun/feng-huang-zhong-wen-17.m3u8"
     },
     {
       "name": "凤凰资讯",
@@ -2443,10 +2399,6 @@
     {
       "name": "纬来体育",
       "url": "https://stream1.freetv.fun/wei-lai-ti-yu-7.m3u8"
-    },
-    {
-      "name": "纬来体育",
-      "url": "https://stream1.freetv.fun/wei-lai-ti-yu-3.m3u8"
     },
     {
       "name": "三立台湾",
@@ -2586,11 +2538,15 @@
     },
     {
       "name": "广东体育",
-      "url": "https://stream1.freetv.fun/869475cf6ab5d187816a1b7fbd8649cfc0b41c452e5595eabb2a36e51a61eecf.m3u8"
+      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-20.m3u8"
     },
     {
       "name": "广东体育",
-      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-16.m3u8"
+      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-3.m3u8"
+    },
+    {
+      "name": "广东体育",
+      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-30.m3u8"
     },
     {
       "name": "纬来体育",
@@ -2658,19 +2614,19 @@
     },
     {
       "name": "广州竞赛",
-      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-2.m3u8"
-    },
-    {
-      "name": "广州竞赛",
-      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-15.m3u8"
-    },
-    {
-      "name": "广州竞赛",
       "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-8.m3u8"
     },
     {
       "name": "广州竞赛",
       "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-1.m3u8"
+    },
+    {
+      "name": "广州竞赛",
+      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-3.m3u8"
+    },
+    {
+      "name": "广州竞赛",
+      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-4.m3u8"
     },
     {
       "name": "辽宁体育",
@@ -2742,10 +2698,6 @@
     },
     {
       "name": "动漫秀场",
-      "url": "https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-11.m3u8"
-    },
-    {
-      "name": "动漫秀场",
       "url": "https://stream1.freetv.fun/7e65432fb94551c8a7abf4afa8996c11471807bf9cf6ec1a3e49a2c25b2c1f58.m3u8"
     },
     {
@@ -2755,6 +2707,14 @@
     {
       "name": "动漫秀场",
       "url": "https://stream1.freetv.fun/c1a9c0728c4a8d7636c7de8d4f69f3abdc906231ea7f7e72d59433843738617f.m3u8"
+    },
+    {
+      "name": "动漫秀场",
+      "url": "https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-9.m3u8"
+    },
+    {
+      "name": "动漫秀场",
+      "url": "https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-2.m3u8"
     },
     {
       "name": "CN卡通",
@@ -2774,31 +2734,23 @@
     },
     {
       "name": "金鹰卡通",
-      "url": "https://stream1.freetv.fun/jin-ying-qia-tong-22.m3u8"
-    },
-    {
-      "name": "金鹰卡通",
-      "url": "https://stream1.freetv.fun/aec603fdb1ae19a081a7ca50498e3c9429447092a2208a2d383ae2bc812009b5.m3u8"
-    },
-    {
-      "name": "金鹰卡通",
-      "url": "https://stream1.freetv.fun/321f73ad28440de1629cd54e028c9355b2cb709eb8b30b90e4d0f3d5b41b0c4e.m3u8"
-    },
-    {
-      "name": "金鹰卡通",
-      "url": "https://stream1.freetv.fun/jin-ying-qia-tong-19.m3u8"
-    },
-    {
-      "name": "金鹰卡通",
-      "url": "https://stream1.freetv.fun/1b907bbf4760e673ec9ab89e2327cd1d9e5df04ca6ef35a6fb07f5b6757f4791.m3u8"
-    },
-    {
-      "name": "金鹰卡通",
-      "url": "https://stream1.freetv.fun/jin-ying-qia-tong-29.m3u8"
-    },
-    {
-      "name": "金鹰卡通",
       "url": "https://stream1.freetv.fun/jin-ying-qia-tong-34.m3u8"
+    },
+    {
+      "name": "金鹰卡通",
+      "url": "https://stream1.freetv.fun/3442dca643bbe89bae76ea70d2aa42b07671b0e1daef6ef390f9f4edd7807a49.m3u8"
+    },
+    {
+      "name": "金鹰卡通",
+      "url": "https://stream1.freetv.fun/jin-ying-qia-tong-13.m3u8"
+    },
+    {
+      "name": "金鹰卡通",
+      "url": "https://stream1.freetv.fun/jin-ying-qia-tong-44.m3u8"
+    },
+    {
+      "name": "金鹰卡通",
+      "url": "https://stream1.freetv.fun/ipv6-jin-ying-qia-tong-7.m3u8"
     },
     {
       "name": "浙江少儿",
