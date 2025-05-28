@@ -1,7 +1,7 @@
 [
   [
     {
-      "name": "2025-05-25 18:16:46",
+      "name": "2025-05-28 18:16:48",
       "url": "https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8"
     },
     {
@@ -1701,10 +1701,6 @@
       "url": "https://jwcdnqx.hebyun.com.cn/zb/luquanyi/1500k/tzwj_video.m3u8"
     },
     {
-      "name": "鹿泉一套",
-      "url": "https://jwcdnqx.hebyun.com.cn/live/luquanyi/1500k/tzwj_video.m3u8"
-    },
-    {
       "name": "邯郸科技教育",
       "url": "https://jwcdnqx.hebyun.com.cn/live/hdkj/1500k/tzwj_video.m3u8"
     },
@@ -1867,10 +1863,6 @@
     {
       "name": "成县综合",
       "url": "https://play.kankanlive.com/live/1702454377323961.m3u8"
-    },
-    {
-      "name": "武威新闻",
-      "url": "https://play.kankanlive.com/live/1693539781636986.m3u8"
     },
     {
       "name": "永昌综合",
@@ -2043,10 +2035,6 @@
     {
       "name": "济南教育",
       "url": "https://stream1.freetv.fun/ji-nan-jiao-yu-1.m3u8"
-    },
-    {
-      "name": "东营综合",
-      "url": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel113571/playlist.m3u8"
     },
     {
       "name": "临沂农科",
@@ -2337,6 +2325,14 @@
       "url": "https://stream.hrbtv.net/yspd/sd/live.m3u8"
     },
     {
+      "name": "哈尔滨影视",
+      "url": "https://stream.hrbtv.net/yspd/playlist.m3u8"
+    },
+    {
+      "name": "哈尔滨生活",
+      "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
+    },
+    {
       "name": "大庆新闻综合",
       "url": "https://stream1.freetv.fun/da-qing-xin-wen-zong-he-1.m3u8"
     },
@@ -2403,6 +2399,10 @@
     {
       "name": "纬来体育",
       "url": "https://epg.pw/stream/4f18dfe0593db5c686eb64ae8edaf2a9202d4d46bdc9bbde2cee27708e12ea01.m3u8"
+    },
+    {
+      "name": "纬来体育",
+      "url": "https://stream1.freetv.fun/wei-lai-ti-yu-7.m3u8"
     },
     {
       "name": "三立台湾",
