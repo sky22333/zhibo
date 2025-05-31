@@ -1,14 +1,6 @@
 [
   [
     {
-      "name": "2025-05-28 18:16:48",
-      "url": "https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8"
-    },
-    {
-      "name": "CCTV-1",
-      "url": "https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8"
-    },
-    {
       "name": "CCTV-4",
       "url": "https://global.cgtn.cicc.media.caton.cloud/master/cgtn-america.m3u8"
     },
@@ -639,10 +631,6 @@
     {
       "name": "哈哈炫动",
       "url": "https://stream1.freetv.fun/ipv6-ha-ha-xuan-dong-10.m3u8"
-    },
-    {
-      "name": "嘉定电视台",
-      "url": "https://pili-live-hls.wdit.com.cn/wditlive/15472c98517744b994e85c9c60cc93cf6a3b.m3u8?zshangd#https://pili-live-hls.wdit.com.cn/wditlive/15472c98517744b994e85c9c60cc93cf6a3b.m3u8"
     },
     {
       "name": "新闻综合",
@@ -1679,6 +1667,10 @@
     {
       "name": "河南民生",
       "url": "https://stream1.freetv.fun/he-nan-min-sheng-6.m3u8"
+    },
+    {
+      "name": "河南民生",
+      "url": "https://stream1.freetv.fun/he-nan-min-sheng-7.m3u8"
     },
     {
       "name": "沁阳新闻综合",
