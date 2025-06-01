@@ -1,10 +1,6 @@
 [
   [
     {
-      "name": "CCTV-4",
-      "url": "https://global.cgtn.cicc.media.caton.cloud/master/cgtn-america.m3u8"
-    },
-    {
       "name": "CCTV-13",
       "url": "https://event.pull.hebtv.com/jishi/cp1.m3u8"
     },
@@ -631,6 +627,10 @@
     {
       "name": "哈哈炫动",
       "url": "https://stream1.freetv.fun/ipv6-ha-ha-xuan-dong-10.m3u8"
+    },
+    {
+      "name": "嘉定电视台",
+      "url": "https://pili-live-hls.wdit.com.cn/wditlive/15472c98517744b994e85c9c60cc93cf6a3b.m3u8?zshangd#https://pili-live-hls.wdit.com.cn/wditlive/15472c98517744b994e85c9c60cc93cf6a3b.m3u8"
     },
     {
       "name": "新闻综合",
@@ -2325,6 +2325,10 @@
       "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
     },
     {
+      "name": "哈尔滨娱乐",
+      "url": "https://stream.hrbtv.net/ylpd/sd/live.m3u8"
+    },
+    {
       "name": "大庆新闻综合",
       "url": "https://stream1.freetv.fun/da-qing-xin-wen-zong-he-1.m3u8"
     },
@@ -2391,10 +2395,6 @@
     {
       "name": "纬来体育",
       "url": "https://epg.pw/stream/4f18dfe0593db5c686eb64ae8edaf2a9202d4d46bdc9bbde2cee27708e12ea01.m3u8"
-    },
-    {
-      "name": "纬来体育",
-      "url": "https://stream1.freetv.fun/wei-lai-ti-yu-7.m3u8"
     },
     {
       "name": "三立台湾",
