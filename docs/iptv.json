@@ -98,10 +98,6 @@
     },
     {
       "name": "广东新闻",
-      "url": "https://satellitepull.cnr.cn/live/wxgdxwgb/playlist.m3u8"
-    },
-    {
-      "name": "广东新闻",
       "url": "https://stream1.freetv.fun/yan-dong-xin-wen-2.m3u8"
     },
     {
@@ -1857,6 +1853,10 @@
       "url": "https://play.kankanlive.com/live/1702454377323961.m3u8"
     },
     {
+      "name": "武威新闻",
+      "url": "https://play.kankanlive.com/live/1693539781636986.m3u8"
+    },
+    {
       "name": "永昌综合",
       "url": "https://play.kankanlive.com/live/1652755738635915.m3u8"
     },
@@ -1999,10 +1999,6 @@
     {
       "name": "山东体育",
       "url": "https://stream1.freetv.fun/shan-dong-ti-yu-22.m3u8"
-    },
-    {
-      "name": "济南综合",
-      "url": "https://quehuamtyoutlive.ijntv.cn/qsrog5/0szz7q.m3u8"
     },
     {
       "name": "济南综合",
@@ -2317,16 +2313,8 @@
       "url": "https://stream.hrbtv.net/yspd/sd/live.m3u8"
     },
     {
-      "name": "哈尔滨影视",
-      "url": "https://stream.hrbtv.net/yspd/playlist.m3u8"
-    },
-    {
       "name": "哈尔滨生活",
       "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
-    },
-    {
-      "name": "哈尔滨娱乐",
-      "url": "https://stream.hrbtv.net/ylpd/sd/live.m3u8"
     },
     {
       "name": "大庆新闻综合",
