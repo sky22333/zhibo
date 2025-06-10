@@ -281,6 +281,10 @@
       "url": "https://stream1.freetv.fun/zhe-jiang-min-sheng-1.m3u8"
     },
     {
+      "name": "浙江民生休闲",
+      "url": "https://stream1.freetv.fun/zhe-jiang-min-sheng-xiu-xian-1.m3u8"
+    },
+    {
       "name": "浙江教科影视",
       "url": "https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8"
     },
@@ -623,10 +627,6 @@
     {
       "name": "哈哈炫动",
       "url": "https://stream1.freetv.fun/ipv6-ha-ha-xuan-dong-10.m3u8"
-    },
-    {
-      "name": "嘉定电视台",
-      "url": "https://pili-live-hls.wdit.com.cn/wditlive/15472c98517744b994e85c9c60cc93cf6a3b.m3u8?zshangd#https://pili-live-hls.wdit.com.cn/wditlive/15472c98517744b994e85c9c60cc93cf6a3b.m3u8"
     },
     {
       "name": "新闻综合",
@@ -1849,6 +1849,10 @@
       "url": "https://play.kankanlive.com/live/1702454377323961.m3u8"
     },
     {
+      "name": "景泰综合",
+      "url": "https://play.kankanlive.com/live/1624439143745981.m3u8"
+    },
+    {
       "name": "武威新闻",
       "url": "https://play.kankanlive.com/live/1693539781636986.m3u8"
     },
@@ -2313,10 +2317,6 @@
       "url": "https://stream.hrbtv.net/yspd/playlist.m3u8"
     },
     {
-      "name": "哈尔滨生活",
-      "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
-    },
-    {
       "name": "大庆新闻综合",
       "url": "https://stream1.freetv.fun/da-qing-xin-wen-zong-he-1.m3u8"
     },
@@ -2383,10 +2383,6 @@
     {
       "name": "纬来体育",
       "url": "https://epg.pw/stream/4f18dfe0593db5c686eb64ae8edaf2a9202d4d46bdc9bbde2cee27708e12ea01.m3u8"
-    },
-    {
-      "name": "纬来体育",
-      "url": "https://stream1.freetv.fun/wei-lai-ti-yu-7.m3u8"
     },
     {
       "name": "三立台湾",
