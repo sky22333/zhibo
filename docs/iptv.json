@@ -2021,10 +2021,6 @@
       "url": "https://stream1.freetv.fun/ji-nan-jiao-yu-1.m3u8"
     },
     {
-      "name": "东营综合",
-      "url": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel113571/playlist.m3u8"
-    },
-    {
       "name": "临沂农科",
       "url": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel115062/playlist.m3u8"
     },
@@ -2313,12 +2309,12 @@
       "url": "https://stream.hrbtv.net/yspd/sd/live.m3u8"
     },
     {
-      "name": "哈尔滨生活",
-      "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
+      "name": "哈尔滨影视",
+      "url": "https://stream.hrbtv.net/yspd/playlist.m3u8"
     },
     {
       "name": "哈尔滨生活",
-      "url": "https://stream.hrbtv.net/shpd/playlist.m3u8"
+      "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
     },
     {
       "name": "大庆新闻综合",
