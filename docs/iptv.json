@@ -1853,10 +1853,6 @@
       "url": "https://play.kankanlive.com/live/1702454377323961.m3u8"
     },
     {
-      "name": "景泰综合",
-      "url": "https://play.kankanlive.com/live/1624439143745981.m3u8"
-    },
-    {
       "name": "武威新闻",
       "url": "https://play.kankanlive.com/live/1693539781636986.m3u8"
     },
@@ -2205,18 +2201,6 @@
       "url": "https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd#https://liveout.xntv.tv/a65jur/90p2i1.m3u8#http://dtrmlive.qhdtrm.cn/xnds/sd/live.m3u8"
     },
     {
-      "name": "贵南综合",
-      "url": "https://livecdn.dmqhyadmin.com/hls/xjguinan.m3u8"
-    },
-    {
-      "name": "化隆综合",
-      "url": "https://livecdn.dmqhyadmin.com/hls/xjhualong.m3u8"
-    },
-    {
-      "name": "兴海综合",
-      "url": "https://lived.dmqhyadmin.com/xhzhpd/sd/live.m3u8"
-    },
-    {
       "name": "黑龙江文体",
       "url": "https://stream1.freetv.fun/hei-long-jiang-wen-ti-1.m3u8"
     },
@@ -2311,6 +2295,10 @@
     {
       "name": "哈尔滨新闻综合",
       "url": "https://stream1.freetv.fun/ha-er-bin-xin-wen-zong-he-4.m3u8"
+    },
+    {
+      "name": "哈尔滨影视",
+      "url": "https://stream.hrbtv.net/yspd/sd/live.m3u8"
     },
     {
       "name": "哈尔滨生活",
