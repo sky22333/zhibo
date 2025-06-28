@@ -2301,6 +2301,10 @@
       "url": "https://stream.hrbtv.net/yspd/sd/live.m3u8"
     },
     {
+      "name": "哈尔滨影视",
+      "url": "https://stream.hrbtv.net/yspd/playlist.m3u8"
+    },
+    {
       "name": "哈尔滨生活",
       "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
     },
@@ -2371,6 +2375,10 @@
     {
       "name": "纬来体育",
       "url": "https://epg.pw/stream/4f18dfe0593db5c686eb64ae8edaf2a9202d4d46bdc9bbde2cee27708e12ea01.m3u8"
+    },
+    {
+      "name": "纬来体育",
+      "url": "https://stream1.freetv.fun/wei-lai-ti-yu-7.m3u8"
     },
     {
       "name": "三立台湾",
