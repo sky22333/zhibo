@@ -20,11 +20,6 @@ jobs:
     - name: Install jq
       run: sudo apt-get install jq
 
-    - name: 清空原有
-      run: |
-        mkdir -p docs
-        echo '[]' > docs/iptv.json
-
     - name: 获取vbskycn/iptv库
       run: |
         set -e
