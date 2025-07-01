@@ -1861,10 +1861,6 @@
       "url": "https://play.kankanlive.com/live/1652755738635915.m3u8"
     },
     {
-      "name": "渭源新闻",
-      "url": "https://play.kankanlive.com/live/1711955176432990.m3u8"
-    },
-    {
       "name": "甘肃少儿",
       "url": "https://hls.gstv.com.cn/49048r/922k96.m3u8"
     },
@@ -2001,6 +1997,10 @@
       "url": "https://stream1.freetv.fun/shan-dong-ti-yu-22.m3u8"
     },
     {
+      "name": "山东体育",
+      "url": "https://stream1.freetv.fun/shan-dong-ti-yu-6.m3u8"
+    },
+    {
       "name": "济南综合",
       "url": "https://stream1.freetv.fun/ji-nan-zong-he-2.m3u8"
     },
@@ -2119,10 +2119,6 @@
     {
       "name": "延边-1",
       "url": "https://live.ybtvyun.com/video/s10006-9ccd00054351/index.m3u8"
-    },
-    {
-      "name": "延边-2",
-      "url": "https://live.ybtvyun.com/video/s10006-1c8f0ebfee9f/index.m3u8"
     },
     {
       "name": "珲春新闻综合",
@@ -2307,10 +2303,6 @@
     {
       "name": "哈尔滨生活",
       "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
-    },
-    {
-      "name": "哈尔滨娱乐",
-      "url": "https://stream.hrbtv.net/ylpd/sd/live.m3u8"
     },
     {
       "name": "大庆新闻综合",
