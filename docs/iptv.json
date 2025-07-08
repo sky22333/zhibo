@@ -729,10 +729,6 @@
       "url": "https://huaiyin-tv-replay.cm.jstv.com/huaiyin-tv/huaiyinf.m3u8"
     },
     {
-      "name": "溧水新闻综合",
-      "url": "https://lishui-tv-hls.cm.jstv.com/lishui-tv/lsxwzh.m3u8"
-    },
-    {
       "name": "苏州4k",
       "url": "https://live-auth.51kandianshi.com/szgd/csztv4k_hd.m3u8"
     },
@@ -1859,6 +1855,10 @@
     {
       "name": "永昌综合",
       "url": "https://play.kankanlive.com/live/1652755738635915.m3u8"
+    },
+    {
+      "name": "渭源新闻",
+      "url": "https://play.kankanlive.com/live/1711955176432990.m3u8"
     },
     {
       "name": "甘肃少儿",
