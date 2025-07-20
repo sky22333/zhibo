@@ -94,6 +94,10 @@ nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v libx264 -preset medium
 | 4K           | 15000 - 50000     | 128            | 15 - 50    |
 
 
+---
+
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/sky22333/zhibo.svg?variant=adaptive)](https://starchart.cc/sky22333/zhibo)
 
 ---
 
