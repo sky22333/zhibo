@@ -93,15 +93,13 @@ nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v libx264 -preset medium
 | 2K           | 8000 - 20000      | 128            | 9 - 20     |
 | 4K           | 15000 - 50000     | 128            | 15 - 50    |
 
+---
+
+#### TV直播源：
+- https://iptv-org.github.io
+- [影视接口](https://cn.bing.com/search?q=%E5%BD%B1%E8%A7%86%E9%87%87%E9%9B%86)
 
 ---
 
 ## Stargazers over time
 [![Stargazers over time](https://starchart.cc/sky22333/zhibo.svg?variant=adaptive)](https://starchart.cc/sky22333/zhibo)
-
----
-
-
-#### TV直播源：
-- https://iptv-org.github.io
-- [影视接口](https://cn.bing.com/search?q=%E5%BD%B1%E8%A7%86%E9%87%87%E9%9B%86)
