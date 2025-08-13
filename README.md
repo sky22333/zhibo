@@ -99,6 +99,11 @@ nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v libx264 -preset medium
 - https://iptv-org.github.io
 - [影视接口](https://cn.bing.com/search?q=%E5%BD%B1%E8%A7%86%E9%87%87%E9%9B%86)
 
+
+### 免责声明
+- 本项目仅用于技术学习与交流，不提供任何实际资源。所有内容均来自互联网公开接口。
+- 所有资源的版权归原著作权人所有，用户使用本项目产生的任何版权纠纷由用户自行承担。
+
 ---
 
 ## Stargazers over time
