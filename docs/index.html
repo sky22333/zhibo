@@ -48,6 +48,7 @@
         }
         #dplayer {
             width: 100%;
+            aspect-ratio: 16 / 9;
             border-radius: 10px;
             overflow: hidden;
             border: 2px solid black;
@@ -385,8 +386,6 @@
                 window.screen.orientation.unlock();
             }
         });
-
-        // Load channel list when the page loads
         window.addEventListener('DOMContentLoaded', loadChannelList);
     </script>
 </body>
