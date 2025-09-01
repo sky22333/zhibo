@@ -1,10 +1,6 @@
 [
   [
     {
-      "name": "CCTV-11",
-      "url": "https://stream1.freetv.fun/522d8760b9c0e8172aefbf6b1aac7030daf6f613fabce8b1d00a15416ad0b052.m3u8"
-    },
-    {
       "name": "CCTV-13",
       "url": "https://event.pull.hebtv.com/jishi/cp1.m3u8"
     },
@@ -113,6 +109,10 @@
       "url": "https://stream1.freetv.fun/shan-xi-wei-shi-25.m3u8"
     },
     {
+      "name": "陕西卫视",
+      "url": "https://stream1.freetv.fun/shan-xi-wei-shi-117.m3u8"
+    },
+    {
       "name": "三沙卫视",
       "url": "https://stream1.freetv.fun/8bd6b69c423ac31e71c2311ad33f4f291e1314c69005ffb7b3b7defc2944adb2.m3u8"
     },
@@ -146,7 +146,7 @@
     },
     {
       "name": "广州竞赛",
-      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-12.m3u8"
+      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-13.m3u8"
     },
     {
       "name": "浙江钱江",
@@ -390,7 +390,7 @@
     },
     {
       "name": "动漫秀场",
-      "url": "https://stream1.freetv.fun/dong-man-xiu-chang-16.m3u8"
+      "url": "https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-11.m3u8"
     },
     {
       "name": "动漫秀场",
@@ -873,6 +873,10 @@
       "url": "https://play.kankanlive.com/live/1652755738635915.m3u8"
     },
     {
+      "name": "渭源新闻",
+      "url": "https://play.kankanlive.com/live/1711955176432990.m3u8"
+    },
+    {
       "name": "甘肃少儿",
       "url": "https://hls.gstv.com.cn/49048r/922k96.m3u8"
     },
@@ -951,10 +955,6 @@
     {
       "name": "铜陵新闻综合",
       "url": "https://ls.qingting.fm/live/21303/64k.m3u8"
-    },
-    {
-      "name": "广德生活",
-      "url": "https://live.gdtv.ah.cn/live/newsTV.m3u8"
     },
     {
       "name": "宿州新闻综合",
@@ -1150,10 +1150,6 @@
     },
     {
       "name": "纬来体育",
-      "url": "https://stream1.freetv.fun/wei-lai-ti-yu-3.m3u8"
-    },
-    {
-      "name": "纬来体育",
       "url": "https://epg.pw/stream/8855a9936e37e608a0ec8a014cce1673dee9c5d68d560da376cc92e5edef2b25.m3u8"
     },
     {
@@ -1213,6 +1209,14 @@
       "url": "https://hls-gateway.vpstv.net/streams/476258.m3u8"
     },
     {
+      "name": "CHC家庭影院",
+      "url": "https://stream1.freetv.fun/chcjia-ting-ying-yuan-6.m3u8"
+    },
+    {
+      "name": "CHC动作电影",
+      "url": "https://stream1.freetv.fun/413df533cc2d866bacdc87729814e66f4cf836c13b12ed783b54345fd012c6c8.m3u8"
+    },
+    {
       "name": "黑莓电影",
       "url": "https://epg.pw/stream/ffcb6572863f0745a7369fbd9d901f1dfd0ab8fab8bad8bebb4e01c90b303c47.m3u8"
     },
@@ -1270,10 +1274,6 @@
     },
     {
       "name": "纬来体育",
-      "url": "https://stream1.freetv.fun/wei-lai-ti-yu-3.m3u8"
-    },
-    {
-      "name": "纬来体育",
       "url": "https://epg.pw/stream/8855a9936e37e608a0ec8a014cce1673dee9c5d68d560da376cc92e5edef2b25.m3u8"
     },
     {
@@ -1294,7 +1294,7 @@
     },
     {
       "name": "广州竞赛",
-      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-12.m3u8"
+      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-13.m3u8"
     },
     {
       "name": "辽宁体育",
@@ -1326,7 +1326,7 @@
     },
     {
       "name": "动漫秀场",
-      "url": "https://stream1.freetv.fun/dong-man-xiu-chang-16.m3u8"
+      "url": "https://stream1.freetv.fun/ipv6-dong-man-xiu-chang-11.m3u8"
     },
     {
       "name": "动漫秀场",
