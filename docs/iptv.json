@@ -21,6 +21,10 @@
       "url": "https://stream1.freetv.fun/87de3fae6db73a08904421488de7b0ba39e5eccf12a85ec47f8ccfb0985d2fa7.m3u8"
     },
     {
+      "name": "CETV-1",
+      "url": "https://cc06.tv12.xyz/23.m3u8"
+    },
+    {
       "name": "CETV-2",
       "url": "https://cc06.tv12.xyz/24.m3u8"
     },
@@ -85,8 +89,16 @@
       "url": "https://hls-gateway.vpstv.net/streams/708859.m3u8"
     },
     {
+      "name": "风云足球",
+      "url": "https://cc06.tv12.xyz/41.m3u8"
+    },
+    {
       "name": "电视指南",
       "url": "https://cc06.tv12.xyz/39.m3u8"
+    },
+    {
+      "name": "世界地理",
+      "url": "https://cc06.tv12.xyz/104.m3u8"
     },
     {
       "name": "兵器科技",
@@ -142,7 +154,7 @@
     },
     {
       "name": "广东体育",
-      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-24.m3u8"
+      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-3.m3u8"
     },
     {
       "name": "广东体育",
@@ -157,16 +169,16 @@
       "url": "https://hls-gateway.vpstv.net/streams/708873.m3u8"
     },
     {
-      "name": "广东民生",
-      "url": "https://stream1.freetv.fun/yan-dong-min-sheng-14.m3u8"
-    },
-    {
       "name": "大湾区卫视",
       "url": "https://stream1.freetv.fun/9e44565ab6186689007a295d8b94b2a970fafde637068b0e3837e5f84689a8f3.m3u8"
     },
     {
       "name": "广州影视",
       "url": "https://stream1.freetv.fun/yan-zhou-ying-shi-25.m3u8"
+    },
+    {
+      "name": "广州竞赛",
+      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-2.m3u8"
     },
     {
       "name": "浙江钱江",
@@ -329,10 +341,6 @@
       "url": "https://stream1.freetv.fun/shao-xing-gong-gong-2.m3u8"
     },
     {
-      "name": "海宁新闻综合",
-      "url": "https://p2hs.vzan.com/slowlive/317913155078575177/live.m3u8"
-    },
-    {
       "name": "武义新闻综合",
       "url": "https://stream1.freetv.fun/wu-yi-xin-wen-zong-he-1.m3u8"
     },
@@ -387,6 +395,10 @@
     {
       "name": "上虞新商都",
       "url": "https://stream1.freetv.fun/shang-yu-xin-shang-du-1.m3u8"
+    },
+    {
+      "name": "北京卡酷少儿",
+      "url": "https://cc06.tv12.xyz/29.m3u8"
     },
     {
       "name": "北京新闻",
@@ -551,6 +563,10 @@
     {
       "name": "湖南都市",
       "url": "https://stream1.freetv.fun/hu-nan-du-shi-13.m3u8"
+    },
+    {
+      "name": "金鹰纪实",
+      "url": "https://stream1.freetv.fun/jin-ying-ji-shi-23.m3u8"
     },
     {
       "name": "金鹰纪实",
@@ -997,6 +1013,10 @@
       "url": "https://stream1.freetv.fun/yan-bian-wei-shi-16.m3u8"
     },
     {
+      "name": "延边卫视",
+      "url": "https://cc06.tv12.xyz/113.m3u8"
+    },
+    {
       "name": "珲春新闻综合",
       "url": "https://stream1.freetv.fun/hun-chun-xin-wen-zong-he-3.m3u8"
     },
@@ -1022,7 +1042,7 @@
     },
     {
       "name": "西宁新闻综合",
-      "url": "https://stream1.freetv.fun/zhu-xia--xi-zhu-xin-wen-zong-he-1.m3u8"
+      "url": "https://stream1.freetv.fun/xi-zhu-xin-wen-zong-he-1.m3u8"
     },
     {
       "name": "西宁生活服务",
@@ -1229,6 +1249,10 @@
       "url": "https://hls-gateway.vpstv.net/streams/476258.m3u8"
     },
     {
+      "name": "CHC家庭影院",
+      "url": "https://stream1.freetv.fun/chcjia-ting-ying-yuan-13.m3u8"
+    },
+    {
       "name": "黑莓电影",
       "url": "https://epg.pw/stream/ffcb6572863f0745a7369fbd9d901f1dfd0ab8fab8bad8bebb4e01c90b303c47.m3u8"
     },
@@ -1282,7 +1306,7 @@
     },
     {
       "name": "广东体育",
-      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-24.m3u8"
+      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-3.m3u8"
     },
     {
       "name": "广东体育",
@@ -1309,8 +1333,16 @@
       "url": "https://hls-gateway.vpstv.net/streams/636980.m3u8"
     },
     {
+      "name": "五星体育",
+      "url": "https://other.ottiptv.cc/wxty.m3u8"
+    },
+    {
       "name": "精品体育",
       "url": "https://epg.pw/stream/f7556eccd4ae06b0c2991fdc7a4f8388496559f728cc82459a8e50346040e226.m3u8"
+    },
+    {
+      "name": "广州竞赛",
+      "url": "https://stream1.freetv.fun/yan-zhou-jing-sai-2.m3u8"
     },
     {
       "name": "辽宁体育",
@@ -1329,6 +1361,10 @@
       "url": "https://hls-gateway.vpstv.net/streams/708859.m3u8"
     },
     {
+      "name": "风云足球",
+      "url": "https://cc06.tv12.xyz/41.m3u8"
+    },
+    {
       "name": "魅力足球",
       "url": "https://stream1.freetv.fun/ipv6-mei-li-zu-qiu-4.m3u8"
     },
@@ -1337,8 +1373,20 @@
       "url": "https://hls-gateway.vpstv.net/streams/708839.m3u8"
     },
     {
+      "name": "天元围棋",
+      "url": "https://cc06.tv12.xyz/47.m3u8"
+    },
+    {
       "name": "快乐垂钓",
       "url": "https://hls-gateway.vpstv.net/streams/708835.m3u8"
+    },
+    {
+      "name": "快乐垂钓",
+      "url": "https://cc06.tv12.xyz/56.m3u8"
+    },
+    {
+      "name": "卡酷动画",
+      "url": "https://cc06.tv12.xyz/29.m3u8"
     },
     {
       "name": "动漫秀场",
