@@ -725,6 +725,10 @@
       "url": "https://stream1.freetv.fun/sheng-huo-shi-shang-24.m3u8"
     },
     {
+      "name": "生活时尚",
+      "url": "https://stream1.freetv.fun/sheng-huo-shi-shang-28.m3u8"
+    },
+    {
       "name": "第一财经",
       "url": "https://stream1.freetv.fun/ipv6-di-yi-cai-jing-8.m3u8"
     },
@@ -807,6 +811,10 @@
     {
       "name": "淮阴综合",
       "url": "https://huaiyin-tv-replay.cm.jstv.com/huaiyin-tv/huaiyinf.m3u8"
+    },
+    {
+      "name": "睢宁综合",
+      "url": "https://live-auth.51kandianshi.com/szgd/csztv4k_hd.m3u8"
     },
     {
       "name": "苏州文化生活",
@@ -958,11 +966,11 @@
     },
     {
       "name": "金鹰纪实",
-      "url": "https://stream1.freetv.fun/jin-ying-ji-shi-9.m3u8"
+      "url": "https://stream1.freetv.fun/jin-ying-ji-shi-37.m3u8"
     },
     {
       "name": "金鹰纪实",
-      "url": "https://stream1.freetv.fun/jin-ying-ji-shi-23.m3u8"
+      "url": "https://stream1.freetv.fun/jin-ying-ji-shi-9.m3u8"
     },
     {
       "name": "湖南金鹰纪实",
@@ -1183,10 +1191,6 @@
     {
       "name": "名山综合",
       "url": "https://m3u8channel-bx.yunxya.com/nmip-media/channellive/channel104666/playlist.m3u8"
-    },
-    {
-      "name": "名山综合",
-      "url": "https://m3u8channel-ms.yunxya.com:443/nmip-media/audiolive/audio100580/playlist.m3u8"
     },
     {
       "name": "夹江新闻综合",
@@ -1645,6 +1649,10 @@
       "url": "https://play.kankanlive.com/live/1656487214793905.m3u8"
     },
     {
+      "name": "成县综合",
+      "url": "https://play.kankanlive.com/live/1702454377323961.m3u8"
+    },
+    {
       "name": "永昌综合",
       "url": "https://play.kankanlive.com/live/1652755738635915.m3u8"
     },
@@ -2065,20 +2073,16 @@
       "url": "https://stream1.freetv.fun/ha-er-bin-xin-wen-zong-he-4.m3u8"
     },
     {
-      "name": "哈尔滨影视",
-      "url": "https://stream.hrbtv.net/yspd/playlist.m3u8"
-    },
-    {
-      "name": "哈尔滨影视",
-      "url": "https://stream.hrbtv.net/yspd/sd/live.m3u8"
-    },
-    {
       "name": "哈尔滨生活",
       "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
     },
     {
       "name": "哈尔滨生活",
       "url": "https://stream.hrbtv.net/shpd/playlist.m3u8"
+    },
+    {
+      "name": "哈尔滨娱乐",
+      "url": "https://stream.hrbtv.net/ylpd/sd/live.m3u8"
     },
     {
       "name": "大庆新闻综合",
@@ -2111,10 +2115,6 @@
     {
       "name": "凤凰资讯",
       "url": "https://cdn6.163189.xyz/live/fhzx/stream.m3u8"
-    },
-    {
-      "name": "凤凰资讯",
-      "url": "https://cdn3.163189.xyz/live/fhzx/stream.m3u8"
     },
     {
       "name": "凤凰香港",
@@ -2507,10 +2507,6 @@
     {
       "name": "金鹰卡通",
       "url": "https://stream1.freetv.fun/jin-ying-qia-tong-21.m3u8"
-    },
-    {
-      "name": "金鹰卡通",
-      "url": "https://stream1.freetv.fun/ipv6-jin-ying-qia-tong-13.m3u8"
     },
     {
       "name": "炫动卡通",
