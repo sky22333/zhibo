@@ -16,6 +16,7 @@ bash <(curl -sSL https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ---
 
 ### Docker-compose
+把MP4视频素材放入当前目录
 ```
 services:
   ffmpeg:
