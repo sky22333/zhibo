@@ -15,7 +15,7 @@ bash <(curl -sSL https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
 ---
 ---
 
-### Docker-compose
+### Docker部署
 把MP4视频素材放入当前目录
 ```
 services:
@@ -31,29 +31,21 @@ services:
 
 ---
 
-### 拉流直播源然后推流到指定rtmp地址
+### 拉流直播源然后推流到指定rtmp地址（手动运行）
 大部分地址格式都支持
 
 #### 安装FFmpeg：
-
- 
 ```
-sudo apt update
-```
-
-
-```
-sudo apt install ffmpeg -yq
+sudo apt update && apt install ffmpeg -y
 ```
 
 
 ####  前台运行（测试）
+
 >原画质
 ```
 ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v copy -c:a aac -b:a 128k -f flv "推流地址和推流码"
 ```
-
-
 
 
 #### 后台运行
@@ -61,7 +53,6 @@ ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v copy -c:a aac -b:a 128k -f f
 ```
 nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v copy -c:a aac -b:a 128k -f flv "推流地址和推流码" > /dev/null 2>&1 &
 ```
-
 
 
 #### 强制停止推流
@@ -76,10 +67,6 @@ pkill -f "ffmpeg"
 ```
 nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v libx264 -preset medium -crf 18 -tune film -c:a aac -b:a 128k -f flv "推流地址和推流码" > /dev/null 2>&1 &
 ```
-
-
-
-
 
 ---
 ---
