@@ -13,10 +13,6 @@
       "url": "https://event.pull.hebtv.com/jishi/cp2.m3u8"
     },
     {
-      "name": "CETV-1",
-      "url": "https://cc06.tv12.xyz/23.m3u8"
-    },
-    {
       "name": "CETV-2",
       "url": "https://cc06.tv12.xyz/24.m3u8"
     },
@@ -153,6 +149,10 @@
       "url": "https://stream1.freetv.fun/2476872184d56573ae915237d8e3c990ded214446351f568b57889cbf63da2e8.m3u8"
     },
     {
+      "name": "三沙卫视",
+      "url": "https://stream1.freetv.fun/8bd6b69c423ac31e71c2311ad33f4f291e1314c69005ffb7b3b7defc2944adb2.m3u8"
+    },
+    {
       "name": "广东珠江",
       "url": "https://tv.cdn.com.mp/live/gdzj/stream.m3u8"
     },
@@ -163,10 +163,6 @@
     {
       "name": "广东体育",
       "url": "https://stream1.freetv.fun/yan-dong-ti-yu-16.m3u8"
-    },
-    {
-      "name": "广东体育",
-      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-3.m3u8"
     },
     {
       "name": "大湾区卫视",
@@ -1215,6 +1211,10 @@
     {
       "name": "四川科教",
       "url": "https://stream1.freetv.fun/si-chuan-ke-jiao-1.m3u8"
+    },
+    {
+      "name": "夹江新闻综合",
+      "url": "https://m3u8.channel.dzsm.com/nmip-media/channellive/channel101257/playlist.m3u8"
     },
     {
       "name": "广元综合",
@@ -2523,6 +2523,10 @@
     {
       "name": "金鹰卡通",
       "url": "https://stream1.freetv.fun/jin-ying-qia-tong-10.m3u8"
+    },
+    {
+      "name": "金鹰卡通",
+      "url": "https://stream1.freetv.fun/jin-ying-qia-tong-21.m3u8"
     },
     {
       "name": "炫动卡通",
