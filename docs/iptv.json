@@ -13,6 +13,10 @@
       "url": "https://event.pull.hebtv.com/jishi/cp2.m3u8"
     },
     {
+      "name": "CETV-1",
+      "url": "https://cc06.tv12.xyz/23.m3u8"
+    },
+    {
       "name": "CETV-2",
       "url": "https://cc06.tv12.xyz/24.m3u8"
     },
@@ -145,6 +149,10 @@
       "url": "https://jwplay.hebyun.com.cn/live/hbwstv/1500k/tzwj_video.m3u8"
     },
     {
+      "name": "山西卫视",
+      "url": "https://stream1.freetv.fun/shan-xi-wei-shi-25.m3u8"
+    },
+    {
       "name": "三沙卫视",
       "url": "https://stream1.freetv.fun/2476872184d56573ae915237d8e3c990ded214446351f568b57889cbf63da2e8.m3u8"
     },
@@ -163,6 +171,14 @@
     {
       "name": "广东体育",
       "url": "https://stream1.freetv.fun/yan-dong-ti-yu-16.m3u8"
+    },
+    {
+      "name": "广东体育",
+      "url": "https://stream1.freetv.fun/yan-dong-ti-yu-3.m3u8"
+    },
+    {
+      "name": "广东新闻",
+      "url": "https://stream1.freetv.fun/yan-dong-xin-wen-25.m3u8"
     },
     {
       "name": "大湾区卫视",
@@ -2089,6 +2105,22 @@
       "url": "https://stream1.freetv.fun/ha-er-bin-xin-wen-zong-he-4.m3u8"
     },
     {
+      "name": "哈尔滨影视",
+      "url": "https://stream.hrbtv.net/yspd/sd/live.m3u8"
+    },
+    {
+      "name": "哈尔滨影视",
+      "url": "https://stream.hrbtv.net/yspd/playlist.m3u8"
+    },
+    {
+      "name": "哈尔滨生活",
+      "url": "https://stream.hrbtv.net/shpd/sd/live.m3u8"
+    },
+    {
+      "name": "哈尔滨生活",
+      "url": "https://stream.hrbtv.net/shpd/playlist.m3u8"
+    },
+    {
       "name": "大庆新闻综合",
       "url": "https://stream1.freetv.fun/da-qing-xin-wen-zong-he-1.m3u8"
     },
@@ -2233,6 +2265,18 @@
       "url": "https://hls-gateway.vpstv.net/streams/476258.m3u8"
     },
     {
+      "name": "靖天资讯",
+      "url": "https://stream1.freetv.fun/jing-tian-zi-xun-1.m3u8"
+    },
+    {
+      "name": "靖天资讯",
+      "url": "https://stream1.freetv.fun/jing-tian-zi-xun-2.m3u8"
+    },
+    {
+      "name": "靖天资讯",
+      "url": "https://stream1.freetv.fun/jing-tian-zi-xun-3.m3u8"
+    },
+    {
       "name": "黑莓电影",
       "url": "https://epg.pw/stream/ffcb6572863f0745a7369fbd9d901f1dfd0ab8fab8bad8bebb4e01c90b303c47.m3u8"
     },
@@ -2263,6 +2307,18 @@
     {
       "name": "靖天映画",
       "url": "https://4gtv.dxjc.pp.ua/4gtv-4gtv055/index.m3u8"
+    },
+    {
+      "name": "靖天戏剧",
+      "url": "https://stream1.freetv.fun/jing-tian-xi-ju-1.m3u8"
+    },
+    {
+      "name": "靖天戏剧",
+      "url": "https://stream1.freetv.fun/jing-tian-xi-ju-3.m3u8"
+    },
+    {
+      "name": "靖天戏剧",
+      "url": "https://stream1.freetv.fun/jing-tian-xi-ju-4.m3u8"
     },
     {
       "name": "天映经典",
@@ -2514,6 +2570,10 @@
     },
     {
       "name": "金鹰卡通",
+      "url": "https://stream1.freetv.fun/jin-ying-qia-tong-34.m3u8"
+    },
+    {
+      "name": "金鹰卡通",
       "url": "https://stream1.freetv.fun/jin-ying-qia-tong-13.m3u8"
     },
     {
@@ -2523,10 +2583,6 @@
     {
       "name": "金鹰卡通",
       "url": "https://stream1.freetv.fun/jin-ying-qia-tong-10.m3u8"
-    },
-    {
-      "name": "金鹰卡通",
-      "url": "https://stream1.freetv.fun/jin-ying-qia-tong-21.m3u8"
     },
     {
       "name": "炫动卡通",
