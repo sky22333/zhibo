@@ -7,9 +7,13 @@
 - 支持所有rtmp协议的平台
 - 支持Debian 11，Ubuntu 18.04，以上的系统
 #### 先把需要推流的MP4视频上传到服务器
-运行脚本
+- 运行脚本
 ```
-bash <(curl -sSL https://github.com/sky22333/zhibo/raw/main/ffmpeg.sh)
+bash <(curl -sSL https://raw.githubusercontent.com/sky22333/zhibo/main/ffmpeg.sh)
+```
+- 国内服务器使用此脚本
+```
+bash <(curl -sSL https://cdn.jsdmirror.com/gh/sky22333/zhibo@main/ffmpeg.sh)
 ```
 
 ---
