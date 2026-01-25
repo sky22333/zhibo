@@ -91,8 +91,11 @@ nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v libx264 -preset medium
 - [iptv-org/iptv](https://github.com/iptv-org/iptv/tree/master/streams)
 - [Guovin/iptv-api](https://github.com/Guovin/iptv-api)
 - [Free-TV/IPTV](https://github.com/Free-TV/IPTV/blob/master/playlist.m3u8)
-- [影视接口](https://cn.bing.com/search?q=%E5%BD%B1%E8%A7%86%E9%87%87%E9%9B%86)
 
+#### 搜索引擎关键字
+- `inurl:api.php/provide/vod`
+- `影视接口`
+- `最新影视采集`
 #### 前端
 - [4gray/iptvnator](https://github.com/4gray/iptvnator)
 
