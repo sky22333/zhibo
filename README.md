@@ -17,6 +17,11 @@ bash <(curl -sSL https://cdn.jsdmirror.com/gh/sky22333/zhibo@main/ffmpeg.sh)
 ```
 
 ---
+
+对于抖音，tiktok，快手等平台，可以借助我开发的[推流码获取工具](https://github.com/sky22333/rtmp)获取`rtmp`推流地址
+
+这些平台使用脚本推流可能会有封号风险，请知悉。
+
 ---
 
 ### Docker部署
