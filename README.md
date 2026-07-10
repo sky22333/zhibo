@@ -83,25 +83,7 @@ nohup ffmpeg -thread_queue_size 64 -i "直播源URL" -c:v libx264 -preset medium
 | 2K           | 8000 - 20000      | 128            | 9 - 20     |
 | 4K           | 15000 - 50000     | 128            | 15 - 50    |
 
----
 
-#### TV直播源：
-- [iptv-org/iptv](https://github.com/iptv-org/iptv/tree/master/streams)
-- [Guovin/iptv-api](https://github.com/Guovin/iptv-api)
-- [Free-TV/IPTV](https://github.com/Free-TV/IPTV/blob/master/playlist.m3u8)
-
-#### 搜索引擎关键字
-- `inurl:api.php/provide/vod`
-- `影视接口`
-- `最新影视采集`
-#### 前端
-- [4gray/iptvnator](https://github.com/4gray/iptvnator)
-
-#### APK
-- [lizongying/my-tv-0](https://github.com/lizongying/my-tv-0)
-
-#### 资源集合
-- [dongyubin/IPTV](https://github.com/dongyubin/IPTV)
 
 ### 免责声明
 - 本项目仅用于技术学习与交流，不提供任何实际资源。所有内容均来自互联网公开接口。
