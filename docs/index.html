@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3U8 播放器 | 专业流媒体</title>
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { paper: '#f4f4f1', ink: '#1a1a1a', kblue: '#002fa7' },
+                    fontFamily: { sans: ['"Noto Sans SC"', 'sans-serif'], mono: ['"Space Grotesk"', 'monospace'] },
+                    boxShadow: { 'hard': '4px 4px 0px 0px #1a1a1a', 'hard-blue': '6px 6px 0px 0px #002fa7' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #f4f4f1; background-image: radial-gradient(#d1d1cf 0.5px, transparent 0.5px); background-size: 20px 20px; color: #1a1a1a; }
+        .brutal-card { background: #fff; border: 2px solid #1a1a1a; transition: all 0.2s ease; }
+        #dplayer-container { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border: 2px solid #1a1a1a; box-shadow: 8px 8px 0px 0px #1a1a1a; min-height: 200px; }
+        #dplayer { width: 100% !important; height: 100% !important; }
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #1a1a1a; }
+        .channel-item { border-bottom: 1px solid #eeeeee; transition: all 0.1s; }
+        .channel-item:last-child { border-bottom: none; }
+        .channel-item:hover { background-color: #002fa7; color: #fff; }
+        .channel-item.active { background-color: #1a1a1a; color: #fff; }
+        .btn-action:active { transform: translate(2px, 2px); box-shadow: none; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-in { animation: slideIn 0.4s ease forwards; }
+        @media (max-width: 640px) { #dplayer-container { box-shadow: 4px 4px 0px 0px #1a1a1a; } }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 font-sans">
+    <div class="max-w-6xl mx-auto flex flex-col gap-6 animate-in">
+        <header class="flex justify-between items-end border-b-2 border-ink pb-4">
+            <div>
+                <h1 class="font-mono text-2xl md:text-4xl font-bold tracking-tighter uppercase italic leading-none">M3U8 播放器 <span class="text-kblue">.PRO</span></h1>
+                <p class="text-[9px] md:text-[10px] font-bold opacity-50 tracking-[0.2em] md:tracking-[0.4em] uppercase mt-1">交互式流媒体数字终端</p>
+            </div>
+            <div class="hidden md:block font-mono text-xs font-bold text-ink/40">[ 核心协议: HLS/TS ]</div>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="flex-grow lg:w-3/4 flex flex-col gap-6">
+                <div id="dplayer-container"><div id="dplayer"></div></div>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-grow flex flex-col sm:flex-row brutal-card p-1 shadow-hard gap-1">
+                        <input type="text" class="url-input flex-grow bg-transparent px-4 py-3 sm:py-2 text-sm font-bold focus:outline-none" placeholder="请输入 M3U8 视频源地址...">
+                        <button onclick="playVideo()" class="btn-action bg-kblue text-white px-8 py-3 sm:py-2 font-bold uppercase text-xs tracking-widest hover:bg-ink shrink-0 transition-colors">加载信号</button>
+                    </div>
+                    <div class="brutal-card p-4 md:p-1 md:px-4 md:w-48 flex items-center gap-3 shadow-hard">
+                        <i data-lucide="volume-1" class="w-4 h-4 shrink-0"></i>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" class="flex-grow h-1 bg-ink/10 appearance-none cursor-pointer accent-ink">
+                    </div>
+                </div>
+            </div>
+            <aside class="w-full lg:w-1/4">
+                <div class="brutal-card flex flex-col h-[400px] lg:h-[500px] shadow-hard overflow-hidden">
+                    <div class="bg-ink text-white p-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] flex justify-between items-center">
+                        <span>频道列表清单</span><span id="channel-count" class="text-kblue font-black">00</span>
+                    </div>
+                    <ul id="channelList" class="custom-scroll overflow-y-auto flex-grow flex flex-col bg-white">
+                        <div class="p-8 text-center opacity-20 font-sans text-xs italic text-ink">正在检索信号源...</div>
+                    </ul>
+                    <div class="p-3 border-t-2 border-ink bg-paper">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-kblue animate-pulse"></span>
+                            <span class="text-[9px] font-bold uppercase opacity-60 text-ink">状态: 系统待机</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="mt-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 py-4 border-t border-ink/10 opacity-40">
+            <div class="flex flex-wrap gap-4 text-[9px] md:text-[10px] font-bold uppercase tracking-widest">
+                <span>播放引擎: 已就绪</span><span>核心技术: HLS.JS</span><span>网络状态: 正常</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            theme: '#002fa7',
+            video: { url: '', type: 'customHls', customType: { customHls: (video) => { const hls = new Hls(); hls.loadSource(video.src); hls.attachMedia(video); } } }
+        });
+
+        dp.on('fullscreen', function () {
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock('landscape').catch(err => {
+                    console.log("横屏锁定失败（部分浏览器不支持或用户禁用了旋转）:", err);
+                });
+            }
+        });
+
+        dp.on('fullscreen_cancel', function () {
+            if (screen.orientation && screen.orientation.unlock) {
+                screen.orientation.unlock();
+            }
+        });
+
+        function playVideo() {
+            const val = document.querySelector('.url-input').value;
+            if (val.trim()) {
+                dp.switchVideo({ url: val, type: 'customHls' });
+                dp.play();
+                document.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
+            }
+        }
+
+        function playChannel(url, el) {
+            document.querySelector('.url-input').value = url;
+            dp.switchVideo({ url: url, type: 'customHls' });
+            dp.play();
+            document.querySelectorAll('.channel-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+            if(window.innerWidth < 1024) window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        async function loadChannelList() {
+            const list = document.getElementById('channelList');
+            const count = document.getElementById('channel-count');
+            try {
+                const res = await fetch('iptv.json');
+                const data = await res.json();
+                const channels = Array.isArray(data[0]) ? data[0] : data;
+                list.innerHTML = '';
+                count.innerText = channels.length.toString().padStart(2, '0');
+                channels.forEach((ch) => {
+                    const li = document.createElement('li');
+                    li.className = "channel-item cursor-pointer p-4 text-xs font-bold uppercase tracking-tight flex justify-between items-center group";
+                    li.innerHTML = `<span class="truncate pr-2">${ch.name}</span><i data-lucide="chevron-right" class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-ink shrink-0"></i>`;
+                    li.onclick = () => playChannel(ch.url, li);
+                    list.appendChild(li);
+                });
+                lucide.createIcons();
+            } catch (e) {
+                list.innerHTML = `<div class="p-10 text-[10px] font-bold text-center text-red-500">加载失败: 请检查网络</div>`;
+            }
+        }
+
+        document.getElementById('volume-slider').addEventListener('input', (e) => dp.volume(parseFloat(e.target.value)));
+        window.addEventListener('DOMContentLoaded', loadChannelList);
+    </script>
+</body>
+</html>
